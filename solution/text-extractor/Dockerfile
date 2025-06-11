@@ -10,12 +10,12 @@ ENV STARTUP_CMD="app.text_extractor.handler"
 COPY text-extractor ${LAMBDA_TASK_ROOT}/app
 
 # Install system dependencies including build tools
-RUN yum install -y \
+RUN dnf install -y \
     poppler-utils \
     gcc \
     gcc-c++ \
     python3-devel \
-    && yum clean all
+    && dnf clean all
 
 
 # Install the required packages
