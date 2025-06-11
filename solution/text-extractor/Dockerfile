@@ -9,8 +9,14 @@ ENV STARTUP_CMD="app.text_extractor.handler"
 # Will be overridden locally
 COPY text-extractor ${LAMBDA_TASK_ROOT}/app
 
-# Install binary dependencies
-RUN yum install -y poppler-utils
+# Install system dependencies including build tools
+RUN yum install -y \
+    poppler-utils \
+    gcc \
+    gcc-c++ \
+    python3-devel \
+    && yum clean all
+
 
 # Install the required packages
 RUN pip install -r app/requirements.txt
