@@ -27,8 +27,7 @@ FORCE_SCRIPT_NAME = os.environ.get("FORCE_SCRIPT_NAME")
 
 ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOST'),
                  'localhost',
-                 'host.docker.internal',
-                 'policyconnector.digital']
+                 'host.docker.internal']
 
 # Application definition
 

@@ -62,14 +62,20 @@ The `deploy.sh` script handles building and deploying all components:
 # View available options
 ./deploy.sh -h
 
-# Deploy everything to production (using the default domain: policyconnector.digital)
-./deploy.sh -e prod -t all -d policyconnector.digital
+# Deploy everything to production (using the default domain from DEFAULT_DOMAIN env var or humanservices.policyconnector.digital)
+./deploy.sh -e prod -t all
 
-# Deploy specific components (all use the default domain: policyconnector.digital)
-./deploy.sh -e prod -t static -d policyconnector.digital    # Static assets only
-./deploy.sh -e prod -t api -d policyconnector.digital       # API stack only
-./deploy.sh -e prod -t content -d policyconnector.digital   # Content updates only
-./deploy.sh -e prod -t parsers -d policyconnector.digital   # Parser lambdas only
+# Deploy with a specific domain
+./deploy.sh -e prod -t all -d your-custom-domain.com
+
+# Deploy specific components
+./deploy.sh -e prod -t static      # Static assets only
+./deploy.sh -e prod -t api         # API stack only
+./deploy.sh -e prod -t content     # Content updates only
+./deploy.sh -e prod -t parsers     # Parser lambdas only
+
+# Deploy without custom domain (uses API Gateway default URL)
+./deploy.sh -e prod -t all -d none
 
 ```
 

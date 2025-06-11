@@ -18,7 +18,9 @@ def custom_url(request):
     custom_url = settings.CUSTOM_URL
     host = request.get_host()
 
-    if host == 'policyconnector.digital':
+    # Use the host if it matches the allowed host from environment
+    allowed_host = getattr(settings, 'ALLOWED_HOST_DOMAIN', None)
+    if allowed_host and host == allowed_host:
         custom_url = host
 
     return {'CUSTOM_URL': custom_url}

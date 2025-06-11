@@ -24,18 +24,18 @@ const AWS_SERVICES = {
  * ```typescript
  * // Regular environment
  * const config = await StageConfig.create('dev', undefined, synthesizerConfig.iamPermissionsBoundary);
- * config.aws.lambda('function')  // → /aws/lambda/a1m-eregs-dev-function
+ * config.aws.lambda('function')  // → /aws/lambda/a1m-eregs-hs-dev-function
  *
  * // PR environment
  * const config = await StageConfig.create('dev', 'eph-123', synthesizerConfig.iamPermissionsBoundary);
- * config.aws.lambda('function')  // → /aws/lambda/a1m-eregs-eph-123-function
+ * config.aws.lambda('function')  // → /aws/lambda/a1m-eregs-hs-eph-123-function
  * ```
  */
 export class StageConfig {
   /**
    * Project name used across all environments
    */
-  public static readonly projectName = 'a1m-eregs';
+  public static readonly projectName = 'a1m-eregs-hs';
 
   /**
    * Creates a new StageConfig instance

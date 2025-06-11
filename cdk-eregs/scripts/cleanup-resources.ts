@@ -225,7 +225,7 @@ async function main() {
 
   // Delete in correct order:
   // 1. S3 buckets first (no dependencies)
-  await emptyAndDeleteBucket(`a1m-eregs-${environment}-file-repo-eregs`);
+  await emptyAndDeleteBucket(`a1m-eregs-hs-${environment}-file-repo-eregs`);
 
   // 2. Database instances first (they reference clusters and parameter groups)
   await deleteDatabases(prefix);
@@ -245,10 +245,10 @@ async function main() {
   await deleteParameterGroups(prefix);
 
   // 7. Log groups last (no dependencies)
-  await deleteLogGroups(`/aws/lambda/a1m-eregs-${environment}`);
-  await deleteLogGroups(`/aws/rds/a1m-eregs-${environment}`);
-  await deleteLogGroups(`/aws/api-gateway/a1m-eregs-${environment}`);
-  await deleteLogGroups(`/aws/api-gateway/a1m-eregs-${environment}-api`);
+  await deleteLogGroups(`/aws/lambda/a1m-eregs-hs-${environment}`);
+  await deleteLogGroups(`/aws/rds/a1m-eregs-hs-${environment}`);
+  await deleteLogGroups(`/aws/api-gateway/a1m-eregs-hs-${environment}`);
+  await deleteLogGroups(`/aws/api-gateway/a1m-eregs-hs-${environment}-api`);
 }
 
 main().catch(console.error);

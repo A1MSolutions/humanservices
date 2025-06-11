@@ -51,6 +51,10 @@
       }
     ]
   },
+  "hosted-zone:account=891376964164:domainName=humanservices.policyconnector.digital:region=us-east-1": {
+    "Id": "/hostedzone/Z01286482VCU2CHSD2OBC",
+    "Name": "humanservices.policyconnector.digital."
+  },
   "hosted-zone:account=891376964164:domainName=policyconnector.digital:region=us-east-1": {
     "Id": "/hostedzone/Z0415811BICQ9Q30Q74Z",
     "Name": "policyconnector.digital."

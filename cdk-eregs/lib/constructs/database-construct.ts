@@ -24,11 +24,12 @@ export class DatabaseConstruct extends Construct {
 
     const { vpc, selectedSubnets, stageConfig, serverlessSecurityGroup } = props;
 
-    // Retrieve DB credentials from Secrets Manager
+    // Retrieve DB credentials from Secrets Manager using stage-specific path
+    const secretPath = `/eregulations/${stageConfig.stageName}/db/credentials`;
     const dbSecret = secretsmanager.Secret.fromSecretNameV2(
       this,
       'DbSecret',
-      '/eregulations/db/credentials'
+      secretPath
     );
 
     // Create DB security group

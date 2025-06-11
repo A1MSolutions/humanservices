@@ -32,22 +32,23 @@ async function main() {
     getParameterValue('/eregulations/http/password'),
   ]);
 
-  // Get domain name from context or default to policyconnector.digital
+  // Get domain name from context or environment variable
   const domainNameContext = app.node.tryGetContext('domainName');
+  const defaultDomain = process.env.DEFAULT_DOMAIN || 'humanservices.policyconnector.digital';
   // Only set the domain name if a valid value is provided and not 'false'
-  const domainName = domainNameContext === 'false' ? undefined : (domainNameContext || 'policyconnector.digital');
+  const domainName = domainNameContext === 'false' ? undefined : (domainNameContext || defaultDomain);
 
   // Only create the VPC stack if we're deploying it
   const stackName = process.argv[3];
-  if (!stackName || stackName === 'a1m-eregs-prod-vpc') {
-    new VpcStack(app, 'a1m-eregs-prod-vpc', { env });
+  if (!stackName || stackName === 'a1m-eregs-hs-prod-vpc') {
+    new VpcStack(app, 'a1m-eregs-hs-prod-vpc', { env });
   }
 
-  if (!stackName || stackName === 'a1m-eregs-prod-static') {
+  if (!stackName || stackName === 'a1m-eregs-hs-prod-static') {
     // Get deployment type from context or default to 'content'
     const deploymentType = app.node.tryGetContext('deploymentType') || 'content';
 
-    new StaticAssetsStack(app, 'a1m-eregs-prod-static', {
+    new StaticAssetsStack(app, 'a1m-eregs-hs-prod-static', {
       env,
       deploymentType,
       certificateArn: process.env.CERTIFICATE_ARN,
@@ -55,8 +56,8 @@ async function main() {
   }
 
   // Only create the API stack if we're deploying it
-  if (!stackName || stackName === 'a1m-eregs-prod-api') {
-    new BackendStack(app, 'a1m-eregs-prod-api', {
+  if (!stackName || stackName === 'a1m-eregs-hs-prod-api') {
+    new BackendStack(app, 'a1m-eregs-hs-prod-api', {
       env,
       environmentConfig: {
         vpcId,
@@ -75,7 +76,7 @@ async function main() {
   // Add parser stacks
   if (!stackName || stackName.includes('fr-parser') || stackName.includes('ecfr-parser')) {
     // Create eCFR Parser Stack
-    new EcfrParserStack(app, 'a1m-eregs-prod-ecfr-parser', {
+    new EcfrParserStack(app, 'a1m-eregs-hs-prod-ecfr-parser', {
       env,
       environmentConfig: {
         httpUser,
@@ -88,7 +89,7 @@ async function main() {
     }, stageConfig);
 
     // Create FR Parser Stack
-    new FrParserStack(app, 'a1m-eregs-prod-fr-parser', {
+    new FrParserStack(app, 'a1m-eregs-hs-prod-fr-parser', {
       env,
       environmentConfig: {
         httpUser,
@@ -101,8 +102,8 @@ async function main() {
     }, stageConfig);
   }
 
-  if (!stackName || stackName === 'a1m-eregs-prod-text-extractor') {
-    new TextExtractorStack(app, 'a1m-eregs-prod-text-extractor', {
+  if (!stackName || stackName === 'a1m-eregs-hs-prod-text-extractor') {
+    new TextExtractorStack(app, 'a1m-eregs-hs-prod-text-extractor', {
       env,
       environmentConfig: {
         logLevel: 'INFO',

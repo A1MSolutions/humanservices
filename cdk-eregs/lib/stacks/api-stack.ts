@@ -3,7 +3,7 @@
  * Uses SSM for database configuration and handles ephemeral environments
  */
 
-import * as cdk from 'aws-cdk-lib';
+import * as cdk from "aws-cdk-lib";
 import {
   aws_ec2 as ec2,
   aws_s3 as s3,
@@ -17,14 +17,14 @@ import {
   aws_route53_targets as route53Targets,
   aws_certificatemanager as acm,
   aws_apigateway as apigateway,
-} from 'aws-cdk-lib';
-import { Construct } from 'constructs';
-import { StageConfig } from '../../config/stage-config';
-import { ApiConstruct } from '../constructs/api-construct';
-import { DatabaseConstruct } from '../constructs/database-construct';
-import { WafConstruct } from '../constructs/waf-construct';
-import { ApiGatewayLoggingRole } from '../constructs/api-gateway-logging';
-import * as path from 'path';
+} from "aws-cdk-lib";
+import { Construct } from "constructs";
+import { StageConfig } from "../../config/stage-config";
+import { ApiConstruct } from "../constructs/api-construct";
+import { DatabaseConstruct } from "../constructs/database-construct";
+import { WafConstruct } from "../constructs/waf-construct";
+import { ApiGatewayLoggingRole } from "../constructs/api-gateway-logging";
+import * as path from "path";
 
 /**
  * Configuration for Lambda functions
@@ -78,49 +78,53 @@ class SecurityGroupHandler {
   static createOrImportSecurityGroup(
     scope: Construct,
     vpc: ec2.IVpc,
-    stageConfig: StageConfig
+    stageConfig: StageConfig,
   ): ec2.ISecurityGroup {
-
     if (stageConfig.isEphemeral()) {
       try {
         // For ephemeral, import dev's serverless SG from SSM
         const serverlessSgId = ssm.StringParameter.valueForStringParameter(
           scope,
-          '/eregulations/aws/cdk_securitygroupid'
+          "/eregulations/aws/cdk_securitygroupid",
         );
 
         return ec2.SecurityGroup.fromSecurityGroupId(
           scope,
-          'ImportedServerlessSG',
+          "ImportedServerlessSG",
           serverlessSgId,
-          { allowAllOutbound: true }
+          { allowAllOutbound: true },
         );
       } catch (err) {
-        const errorMessage = err instanceof Error
-          ? err.message
-          : 'Unknown error occurred';
+        const errorMessage =
+          err instanceof Error ? err.message : "Unknown error occurred";
 
         throw new Error(
-          'Failed to get dev serverless security group from SSM. ' +
-          'Ensure dev environment exists and SSM parameter is set. ' +
-          `Error: ${errorMessage}`
+          "Failed to get dev serverless security group from SSM. " +
+            "Ensure dev environment exists and SSM parameter is set. " +
+            `Error: ${errorMessage}`,
         );
       }
     }
 
     // For non-ephemeral environments, create new security group
-    const serverlessSG = new ec2.SecurityGroup(scope, 'ServerlessSecurityGroup', {
-      vpc,
-      description: `Security Group for ${stageConfig.stageName} Serverless Functions`,
-      allowAllOutbound: true,
-      securityGroupName: stageConfig.getResourceName('serverless-security-group'),
-    });
+    const serverlessSG = new ec2.SecurityGroup(
+      scope,
+      "ServerlessSecurityGroup",
+      {
+        vpc,
+        description: `Security Group for ${stageConfig.stageName} Serverless Functions`,
+        allowAllOutbound: true,
+        securityGroupName: stageConfig.getResourceName(
+          "serverless-security-group",
+        ),
+      },
+    );
 
     // Add inbound rules
     serverlessSG.addIngressRule(
       ec2.Peer.anyIpv4(),
       ec2.Port.tcp(443),
-      'Allow HTTPS inbound'
+      "Allow HTTPS inbound",
     );
 
     return serverlessSG;
@@ -141,54 +145,55 @@ function getSecretPath(stageConfig: StageConfig, path: string): string {
  * @extends cdk.Stack
  */
 export class BackendStack extends cdk.Stack {
-  constructor(scope: Construct, id: string, props: BackendStackProps, stageConfig: StageConfig) {
+  constructor(
+    scope: Construct,
+    id: string,
+    props: BackendStackProps,
+    stageConfig: StageConfig,
+  ) {
     super(scope, id, props);
-    new ApiGatewayLoggingRole(this, 'ApiGatewayLogging');
+    new ApiGatewayLoggingRole(this, "ApiGatewayLogging");
     // ================================
     // SECRETS
     // ================================
     const secrets = {
       oidc: secretsmanager.Secret.fromSecretNameV2(
         this,
-        'OidcSecret',
-        getSecretPath(stageConfig, '/oidc/credentials')
+        "OidcSecret",
+        getSecretPath(stageConfig, "/oidc/credentials"),
       ),
       django: secretsmanager.Secret.fromSecretNameV2(
         this,
-        'DjangoSecret',
-        getSecretPath(stageConfig, '/http/django_credentials')
+        "DjangoSecret",
+        getSecretPath(stageConfig, "/http/django_credentials"),
       ),
       reader: secretsmanager.Secret.fromSecretNameV2(
         this,
-        'ReaderSecret',
-        getSecretPath(stageConfig, '/http/reader_credentials')
+        "ReaderSecret",
+        getSecretPath(stageConfig, "/http/reader_credentials"),
       ),
       db: secretsmanager.Secret.fromSecretNameV2(
         this,
-        'DbSecret',
-        getSecretPath(stageConfig, '/db/credentials')
+        "DbSecret",
+        getSecretPath(stageConfig, "/db/credentials"),
       ),
       http: secretsmanager.Secret.fromSecretNameV2(
         this,
-        'HttpSecret',
-        getSecretPath(stageConfig, '/http/credentials')
+        "HttpSecret",
+        getSecretPath(stageConfig, "/http/credentials"),
       ),
     };
 
     // ================================
     // VPC & NETWORKING
     // ================================
-    const vpc = ec2.Vpc.fromLookup(this, 'VPC', {
+    const vpc = ec2.Vpc.fromLookup(this, "VPC", {
       vpcId: props.environmentConfig.vpcId,
     });
 
     const selectedSubnets: ec2.SubnetSelection = {
-      subnets: props.environmentConfig.subnetIds.map(
-        (subnetId, index) => ec2.Subnet.fromSubnetId(
-          this,
-          `PrivateSubnet${index + 1}`,
-          subnetId
-        )
+      subnets: props.environmentConfig.subnetIds.map((subnetId, index) =>
+        ec2.Subnet.fromSubnetId(this, `PrivateSubnet${index + 1}`, subnetId),
       ),
     };
 
@@ -196,10 +201,10 @@ export class BackendStack extends cdk.Stack {
     const serverlessSG = SecurityGroupHandler.createOrImportSecurityGroup(
       this,
       vpc,
-      stageConfig
+      stageConfig,
     );
 
-// ================================
+    // ================================
     // DATABASE SETUP
     // ================================
     let databaseEndpoint: string;
@@ -208,7 +213,7 @@ export class BackendStack extends cdk.Stack {
 
     if (!stageConfig.isEphemeral()) {
       // For non-ephemeral environments
-      databaseConstruct = new DatabaseConstruct(this, 'Database', {
+      databaseConstruct = new DatabaseConstruct(this, "Database", {
         vpc,
         selectedSubnets,
         stageConfig,
@@ -222,22 +227,21 @@ export class BackendStack extends cdk.Stack {
       try {
         databaseEndpoint = ssm.StringParameter.valueForStringParameter(
           this,
-          '/eregulations/db/cdk_host'
+          "/eregulations/db/cdk_host",
         );
 
         databasePort = ssm.StringParameter.valueForStringParameter(
           this,
-          '/eregulations/db/port'
+          "/eregulations/db/port",
         );
       } catch (err) {
-        const errorMessage = err instanceof Error
-          ? err.message
-          : 'Unknown error occurred';
+        const errorMessage =
+          err instanceof Error ? err.message : "Unknown error occurred";
 
         throw new Error(
-          'Failed to get dev database configuration from SSM. ' +
-          'Ensure SSM parameters exist. ' +
-          `Error: ${errorMessage}`
+          "Failed to get dev database configuration from SSM. " +
+            "Ensure SSM parameters exist. " +
+            `Error: ${errorMessage}`,
         );
       }
     }
@@ -246,18 +250,20 @@ export class BackendStack extends cdk.Stack {
     // S3 BUCKET
     // ================================
     const isEphemeral = stageConfig.isEphemeral();
-    const storageBucket = new s3.Bucket(this, 'StorageBucket', {
+    const storageBucket = new s3.Bucket(this, "StorageBucket", {
       bucketName: stageConfig.getResourceName(`file-repo-eregs`),
       encryption: s3.BucketEncryption.S3_MANAGED,
       blockPublicAccess: s3.BlockPublicAccess.BLOCK_ALL,
       enforceSSL: true,
       autoDeleteObjects: isEphemeral,
-      removalPolicy: isEphemeral ? cdk.RemovalPolicy.DESTROY : cdk.RemovalPolicy.RETAIN,
+      removalPolicy: isEphemeral
+        ? cdk.RemovalPolicy.DESTROY
+        : cdk.RemovalPolicy.RETAIN,
       cors: [
         {
           allowedMethods: [s3.HttpMethods.GET, s3.HttpMethods.HEAD],
-          allowedOrigins: ['*'],
-          allowedHeaders: ['*'],
+          allowedOrigins: ["*"],
+          allowedHeaders: ["*"],
           maxAge: 3000,
         },
       ],
@@ -266,10 +272,18 @@ export class BackendStack extends cdk.Stack {
     // ================================
     // SQS QUEUE
     // ================================
-    const textExtractorQueue = sqs.Queue.fromQueueAttributes(this, 'ImportedTextExtractorQueue', {
-      queueUrl: cdk.Fn.importValue(stageConfig.getResourceName('text-extractor-queue-url')),
-      queueArn: cdk.Fn.importValue(stageConfig.getResourceName('text-extractor-queue-arn')),
-    });
+    const textExtractorQueue = sqs.Queue.fromQueueAttributes(
+      this,
+      "ImportedTextExtractorQueue",
+      {
+        queueUrl: cdk.Fn.importValue(
+          stageConfig.getResourceName("text-extractor-queue-url"),
+        ),
+        queueArn: cdk.Fn.importValue(
+          stageConfig.getResourceName("text-extractor-queue-arn"),
+        ),
+      },
+    );
 
     // ================================
     // SSM PARAMETERS
@@ -277,48 +291,107 @@ export class BackendStack extends cdk.Stack {
     const ssmParams = {
       dbHost: databaseEndpoint,
       dbPort: databasePort,
-      gaId: ssm.StringParameter.valueForStringParameter(this, '/eregulations/http/google_analytics'),
-      djangoSettingsModule: ssm.StringParameter.valueForStringParameter(this, '/eregulations/django_settings_module'),
-      baseUrl: ssm.StringParameter.valueForStringParameter(this, '/eregulations/base_url'),
-      customUrl: ssm.StringParameter.valueForStringParameter(this, '/eregulations/custom_url'),
-      surveyUrl: ssm.StringParameter.valueForStringParameter(this, '/eregulations/survey_url'),
-      signupUrl: ssm.StringParameter.valueForStringParameter(this, '/eregulations/signup_url'),
-      demoVideoUrl: ssm.StringParameter.valueForStringParameter(this, '/eregulations/demo_video_url'),
-      oidcAuthEndpoint: ssm.StringParameter.valueForStringParameter(this, '/eregulations/oidc/authorization_endpoint'),
-      oidcTokenEndpoint: ssm.StringParameter.valueForStringParameter(this, '/eregulations/oidc/token_endpoint'),
-      oidcJwksEndpoint: ssm.StringParameter.valueForStringParameter(this, '/eregulations/oidc/jwks_endpoint'),
-      oidcUserEndpoint: ssm.StringParameter.valueForStringParameter(this, '/eregulations/oidc/user_endpoint'),
-      oidcEndEuaSession: ssm.StringParameter.valueForStringParameter(this, '/eregulations/oidc/end_eua_session'),
-      basicSearchFilter: ssm.StringParameter.valueForStringParameter(this, '/eregulations/basic_search_filter'),
-      quotedSearchFilter: ssm.StringParameter.valueForStringParameter(this, '/eregulations/quoted_search_filter'),
-      searchHeadlineTextMax: ssm.StringParameter.valueForStringParameter(this, '/eregulations/search_headline_text_max'),
-      searchHeadlineMinWords: ssm.StringParameter.valueForStringParameter(this, '/eregulations/search_headline_min_words'),
-      searchHeadlineMaxWords: ssm.StringParameter.valueForStringParameter(this, '/eregulations/search_headline_max_words'),
-      searchHeadlineMaxFragments: ssm.StringParameter.valueForStringParameter(this, '/eregulations/search_headline_max_fragments'),
-      euaFeatureFlag: ssm.StringParameter.valueForStringParameter(this, '/eregulations/eua/featureflag'),
+      gaId: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/http/google_analytics",
+      ),
+      djangoSettingsModule: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/django_settings_module",
+      ),
+      baseUrl: ssm.StringParameter.valueForStringParameter(
+        this,
+        `/eregulations/${stageConfig.stageName}/base_url`,
+      ),
+      customUrl: ssm.StringParameter.valueForStringParameter(
+        this,
+        `/eregulations/${stageConfig.stageName}/custom_url`, // ← Use stage-specific
+      ),
+      surveyUrl: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/survey_url",
+      ),
+      signupUrl: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/signup_url",
+      ),
+      demoVideoUrl: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/demo_video_url",
+      ),
+      oidcAuthEndpoint: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/oidc/authorization_endpoint",
+      ),
+      oidcTokenEndpoint: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/oidc/token_endpoint",
+      ),
+      oidcJwksEndpoint: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/oidc/jwks_endpoint",
+      ),
+      oidcUserEndpoint: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/oidc/user_endpoint",
+      ),
+      oidcEndEuaSession: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/oidc/end_eua_session",
+      ),
+      basicSearchFilter: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/basic_search_filter",
+      ),
+      quotedSearchFilter: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/quoted_search_filter",
+      ),
+      searchHeadlineTextMax: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/search_headline_text_max",
+      ),
+      searchHeadlineMinWords: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/search_headline_min_words",
+      ),
+      searchHeadlineMaxWords: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/search_headline_max_words",
+      ),
+      searchHeadlineMaxFragments: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/search_headline_max_fragments",
+      ),
+      euaFeatureFlag: ssm.StringParameter.valueForStringParameter(
+        this,
+        "/eregulations/eua/featureflag",
+      ),
     };
 
     // ================================
     // BUILD ID
     // ================================
-    const buildId = this.node.tryGetContext('buildId')
-      || process.env.RUN_ID
-      || new Date().getTime().toString();
+    const buildId =
+      this.node.tryGetContext("buildId") ||
+      process.env.RUN_ID ||
+      new Date().getTime().toString();
 
     // ================================
     // ENVIRONMENT VARIABLES
     // ================================
     const environmentVariables: { [key: string]: string } = {
-      DB_NAME: 'eregs',
-      DB_USER: 'eregsuser',
+      DB_NAME: "eregs",
+      DB_USER: "eregsuser",
       DB_HOST: databaseEndpoint,
       DB_PORT: databasePort,
       GA_ID: ssmParams.gaId,
       DJANGO_SETTINGS_MODULE: ssmParams.djangoSettingsModule,
-      ALLOWED_HOST: 'policyconnector.digital',
+      ALLOWED_HOST: props.domainName || "localhost",
       STAGE_ENV: stageConfig.stageName,
-      STATIC_URL: cdk.Fn.importValue(stageConfig.getResourceName('static-url')) + '/',
-      WORKING_DIR: '/var/task',
+      STATIC_URL:
+        cdk.Fn.importValue(stageConfig.getResourceName("static-url")) + "/",
+      WORKING_DIR: "/var/task",
       BASE_URL: ssmParams.baseUrl,
       CUSTOM_URL: ssmParams.customUrl,
       SURVEY_URL: ssmParams.surveyUrl,
@@ -338,16 +411,32 @@ export class BackendStack extends cdk.Stack {
       EUA_FEATUREFLAG: ssmParams.euaFeatureFlag,
       AWS_STORAGE_BUCKET_NAME: storageBucket.bucketName,
       TEXT_EXTRACTOR_QUEUE_URL: textExtractorQueue.queueUrl,
-      DEPLOY_NUMBER: process.env.RUN_ID || '',
-      DB_PASSWORD: secrets.db.secretValueFromJson('password').unsafeUnwrap(),
-      HTTP_AUTH_USER: secrets.http.secretValueFromJson('HTTP_AUTH_USER').unsafeUnwrap(),
-      HTTP_AUTH_PASSWORD: secrets.http.secretValueFromJson('HTTP_AUTH_PASSWORD').unsafeUnwrap(),
-      DJANGO_ADMIN_USERNAME: secrets.django.secretValueFromJson('DJANGO_ADMIN_USERNAME').unsafeUnwrap(),
-      DJANGO_ADMIN_PASSWORD: secrets.django.secretValueFromJson('DJANGO_ADMIN_PASSWORD').unsafeUnwrap(),
-      DJANGO_USERNAME: secrets.reader.secretValueFromJson('DJANGO_USERNAME').unsafeUnwrap(),
-      DJANGO_PASSWORD: secrets.reader.secretValueFromJson('DJANGO_PASSWORD').unsafeUnwrap(),
-      OIDC_RP_CLIENT_ID: secrets.oidc.secretValueFromJson('OIDC_RP_CLIENT_ID').unsafeUnwrap(),
-      OIDC_RP_CLIENT_SECRET: secrets.oidc.secretValueFromJson('OIDC_RP_CLIENT_SECRET').unsafeUnwrap(),
+      DEPLOY_NUMBER: process.env.RUN_ID || "",
+      DB_PASSWORD: secrets.db.secretValueFromJson("password").unsafeUnwrap(),
+      HTTP_AUTH_USER: secrets.http
+        .secretValueFromJson("HTTP_AUTH_USER")
+        .unsafeUnwrap(),
+      HTTP_AUTH_PASSWORD: secrets.http
+        .secretValueFromJson("HTTP_AUTH_PASSWORD")
+        .unsafeUnwrap(),
+      DJANGO_ADMIN_USERNAME: secrets.django
+        .secretValueFromJson("DJANGO_ADMIN_USERNAME")
+        .unsafeUnwrap(),
+      DJANGO_ADMIN_PASSWORD: secrets.django
+        .secretValueFromJson("DJANGO_ADMIN_PASSWORD")
+        .unsafeUnwrap(),
+      DJANGO_USERNAME: secrets.reader
+        .secretValueFromJson("DJANGO_USERNAME")
+        .unsafeUnwrap(),
+      DJANGO_PASSWORD: secrets.reader
+        .secretValueFromJson("DJANGO_PASSWORD")
+        .unsafeUnwrap(),
+      OIDC_RP_CLIENT_ID: secrets.oidc
+        .secretValueFromJson("OIDC_RP_CLIENT_ID")
+        .unsafeUnwrap(),
+      OIDC_RP_CLIENT_SECRET: secrets.oidc
+        .secretValueFromJson("OIDC_RP_CLIENT_SECRET")
+        .unsafeUnwrap(),
     };
 
     // ================================
@@ -368,29 +457,36 @@ export class BackendStack extends cdk.Stack {
       handler: string,
       timeout: number = 300,
     ): lambda.DockerImageFunction => {
-      const lambdaFunction = new lambda.DockerImageFunction(this, `${name}Lambda`, {
-        functionName: stageConfig.getResourceName(name.toLowerCase()),
-        code: lambda.DockerImageCode.fromImageAsset(
-          path.join(__dirname, '../../../solution/backend/'),
-          {
-            file: dockerFile,
-            cmd: [handler],
-            buildArgs: {
-              BUILD_ID: buildId,
+      const lambdaFunction = new lambda.DockerImageFunction(
+        this,
+        `${name}Lambda`,
+        {
+          functionName: stageConfig.getResourceName(name.toLowerCase()),
+          code: lambda.DockerImageCode.fromImageAsset(
+            path.join(__dirname, "../../../solution/backend/"),
+            {
+              file: dockerFile,
+              cmd: [handler],
+              buildArgs: {
+                BUILD_ID: buildId,
+              },
             },
-          },
-        ),
-        vpc,
-        vpcSubnets: selectedSubnets,
-        securityGroups: [serverlessSG],
-        timeout: cdk.Duration.seconds(timeout),
-        memorySize: Math.min(props.lambdaConfig.memorySize || 3008, 3008),
-        environment: environmentVariables,
-        logGroup: createLogGroup(name.toLowerCase()),
-      });
+          ),
+          architecture: lambda.Architecture.X86_64, // Add this line
+          vpc,
+          vpcSubnets: selectedSubnets,
+          securityGroups: [serverlessSG],
+          timeout: cdk.Duration.seconds(timeout),
+          memorySize: Math.min(props.lambdaConfig.memorySize || 3008, 3008),
+          environment: environmentVariables,
+          logGroup: createLogGroup(name.toLowerCase()),
+        },
+      );
 
       // Grant read access to secrets
-      Object.values(secrets).forEach(secret => secret.grantRead(lambdaFunction));
+      Object.values(secrets).forEach((secret) =>
+        secret.grantRead(lambdaFunction),
+      );
 
       // Add tags from StageConfig
       Object.entries(stageConfig.getStackTags()).forEach(([key, value]) => {
@@ -403,27 +499,49 @@ export class BackendStack extends cdk.Stack {
     // ================================
     // LAMBDA FUNCTIONS
     // ================================
-    const regSiteLambda = createDockerLambda('RegSite', 'regsite.Dockerfile', 'handler.handler', 30);
-    const migrateLambda = createDockerLambda('Migrate', 'migrate.Dockerfile', 'migrate.handler', 900);
-    const createDbLambda = createDockerLambda('CreateDb', 'createdb.Dockerfile', 'createdb.handler');
-    const dropDbLambda = createDockerLambda('DropDb', 'dropdb.Dockerfile', 'dropdb.handler');
-    const createSuLambda = createDockerLambda('CreateSu', 'createsu.Dockerfile', 'createsu.handler');
+    const regSiteLambda = createDockerLambda(
+      "RegSite",
+      "regsite.Dockerfile",
+      "handler.handler",
+      30,
+    );
+    const migrateLambda = createDockerLambda(
+      "Migrate",
+      "migrate.Dockerfile",
+      "migrate.handler",
+      900,
+    );
+    const createDbLambda = createDockerLambda(
+      "CreateDb",
+      "createdb.Dockerfile",
+      "createdb.handler",
+    );
+    const dropDbLambda = createDockerLambda(
+      "DropDb",
+      "dropdb.Dockerfile",
+      "dropdb.handler",
+    );
+    const createSuLambda = createDockerLambda(
+      "CreateSu",
+      "createsu.Dockerfile",
+      "createsu.handler",
+    );
 
     // Create authorizer Lambda for non-prod environments
     let authorizerLambda;
-    if (stageConfig.environment !== 'prod') {
+    if (stageConfig.environment !== "prod") {
       authorizerLambda = createDockerLambda(
-        'Authorizer',
-        'authorizer.Dockerfile',
-        'authorizer.handler',
-        30
+        "Authorizer",
+        "authorizer.Dockerfile",
+        "authorizer.handler",
+        30,
       );
     }
 
     // ================================
     // API GATEWAY
     // ================================
-    const api = new ApiConstruct(this, 'Api', {
+    const api = new ApiConstruct(this, "Api", {
       vpc,
       securityGroup: serverlessSG,
       environmentVariables,
@@ -443,20 +561,22 @@ export class BackendStack extends cdk.Stack {
     textExtractorQueue.grantSendMessages(regSiteLambda);
 
     // DB inspection permissions
-    [createDbLambda, dropDbLambda, migrateLambda, createSuLambda].forEach(lambdaFn => {
-      lambdaFn.addToRolePolicy(
-        new iam.PolicyStatement({
-          effect: iam.Effect.ALLOW,
-          actions: ['rds:DescribeDBInstances', 'rds:DescribeDBClusters'],
-          resources: ['*'],
-        }),
-      );
-    });
+    [createDbLambda, dropDbLambda, migrateLambda, createSuLambda].forEach(
+      (lambdaFn) => {
+        lambdaFn.addToRolePolicy(
+          new iam.PolicyStatement({
+            effect: iam.Effect.ALLOW,
+            actions: ["rds:DescribeDBInstances", "rds:DescribeDBClusters"],
+            resources: ["*"],
+          }),
+        );
+      },
+    );
 
     // ================================
     // WAF
     // ================================
-    const waf = new WafConstruct(this, 'Waf', stageConfig);
+    const waf = new WafConstruct(this, "Waf", stageConfig);
     waf.associateWithApiGateway(api.api);
 
     // ================================
@@ -468,42 +588,30 @@ export class BackendStack extends cdk.Stack {
       // Get certificate from ARN or create a new one
       if (props.certificateArn) {
         certificate = acm.Certificate.fromCertificateArn(
-          this, 'ImportedApiCertificate', props.certificateArn
+          this,
+          "ImportedApiCertificate",
+          props.certificateArn,
         );
       } else {
-        // Try to get certificate from SSM parameter
-        let certArnParam: string | undefined;
-        try {
-          certArnParam = ssm.StringParameter.valueForStringParameter(
-            this,
-            '/eregulations/certificate/arn'
-          );
-          certificate = acm.Certificate.fromCertificateArn(
-            this, 'SSMCertificate', certArnParam
-          );
-        } catch (err) {
-          // Create a new certificate if none exists
-          // Log the error for debugging purposes
-          const errorMessage = err instanceof Error ? err.message : 'Unknown error';
-          console.warn(`No existing certificate found in SSM, creating a new one. Error: ${errorMessage}`);
+        // Create a new certificate for this deployment
+        console.log(`Creating new certificate for domain: ${props.domainName}`);
 
-          certificate = new acm.Certificate(this, 'ApiCertificate', {
-            domainName: props.domainName,
-            subjectAlternativeNames: [`www.${props.domainName}`],
-            validation: acm.CertificateValidation.fromDns(),
-          });
+        certificate = new acm.Certificate(this, "ApiCertificate", {
+          domainName: props.domainName,
+          subjectAlternativeNames: [`www.${props.domainName}`],
+          validation: acm.CertificateValidation.fromDns(),
+        });
 
-          // Store certificate ARN in SSM for future use
-          new ssm.StringParameter(this, 'CertificateArnParam', {
-            parameterName: '/eregulations/certificate/arn',
-            stringValue: certificate.certificateArn,
-            description: 'ACM Certificate ARN for API Gateway',
-          });
-        }
+        // Store certificate ARN in SSM for future reference
+        new ssm.StringParameter(this, "CertificateArnParam", {
+          parameterName: `/eregulations/${stageConfig.stageName}/certificate/arn`,
+          stringValue: certificate.certificateArn,
+          description: "ACM Certificate ARN for API Gateway",
+        });
       }
 
       // Set up custom domain for API Gateway
-      const apiDomainName = new apigateway.DomainName(this, 'ApiDomainName', {
+      const apiDomainName = new apigateway.DomainName(this, "ApiDomainName", {
         domainName: props.domainName,
         certificate: certificate,
         endpointType: apigateway.EndpointType.REGIONAL,
@@ -511,56 +619,66 @@ export class BackendStack extends cdk.Stack {
       });
 
       // Map the custom domain to the API stage
-      new apigateway.BasePathMapping(this, 'ApiPathMapping', {
+      new apigateway.BasePathMapping(this, "ApiPathMapping", {
         domainName: apiDomainName,
         restApi: api.api,
         stage: api.api.deploymentStage,
-        basePath: '',  // Map to the root path to remove stage name from URL
+        basePath: "", // Map to the root path to remove stage name from URL
       });
 
       // Try to create DNS records in Route53
       try {
-        const hostedZone = route53.HostedZone.fromLookup(this, 'ApiHostedZone', {
-          domainName: props.domainName,
-        });
+        const hostedZone = route53.HostedZone.fromLookup(
+          this,
+          "ApiHostedZone",
+          {
+            domainName: "policyconnector.digital",
+          },
+        );
 
         // Create an A record for the domain pointing to API Gateway
-        new route53.ARecord(this, 'ApiAliasRecord', {
+        new route53.ARecord(this, "ApiAliasRecord", {
           recordName: props.domainName,
           target: route53.RecordTarget.fromAlias(
-            new route53Targets.ApiGatewayDomain(apiDomainName)
+            new route53Targets.ApiGatewayDomain(apiDomainName),
           ),
           zone: hostedZone,
         });
 
         // Create a www subdomain record if needed
-        new route53.ARecord(this, 'WwwApiAliasRecord', {
+        new route53.ARecord(this, "WwwApiAliasRecord", {
           recordName: `www.${props.domainName}`,
           target: route53.RecordTarget.fromAlias(
-            new route53Targets.ApiGatewayDomain(apiDomainName)
+            new route53Targets.ApiGatewayDomain(apiDomainName),
           ),
           zone: hostedZone,
         });
 
         // Store domain name configuration in SSM
-        new ssm.StringParameter(this, 'ApiDomainNameParam', {
-          parameterName: `/eregulations/api/domain`,
+        new ssm.StringParameter(this, "ApiDomainNameParam", {
+          parameterName: `/eregulations/${stageConfig.stageName}/api/domain`,
           stringValue: props.domainName,
-          description: 'Domain name for API Gateway',
+          description: "Domain name for API Gateway",
         });
-
       } catch (error) {
         // If hosted zone lookup fails, log warning but continue deployment
-        console.warn(`WARNING: Could not find Route53 hosted zone for ${props.domainName}. DNS records were not created.`);
-        console.warn(`Please ensure the domain is registered in Route53 and try again.`);
-        console.warn('Error details:', error instanceof Error ? error.message : String(error));
+        console.warn(
+          `WARNING: Could not find Route53 hosted zone for ${props.domainName}. DNS records were not created.`,
+        );
+        console.warn(
+          `Please ensure the domain is registered in Route53 and try again.`,
+        );
+        console.warn(
+          "Error details:",
+          error instanceof Error ? error.message : String(error),
+        );
       }
 
       // Add domain URL output
-      new cdk.CfnOutput(this, 'ApiDomainURL', {
+      new cdk.CfnOutput(this, "ApiDomainURL", {
         value: `https://${props.domainName}`,
-        exportName: stageConfig.getResourceName('api-domain-url'),
-        description: 'Custom Domain URL for API',
+        exportName: stageConfig.getResourceName("api-domain-url"),
+        description: "Custom Domain URL for API",
       });
     }
 
@@ -574,18 +692,18 @@ export class BackendStack extends cdk.Stack {
     const outputs: Record<string, cdk.CfnOutputProps> = {
       ApiHandlerArn: {
         value: regSiteLambda.functionArn,
-        description: 'API Handler Lambda function ARN',
-        exportName: stageConfig.getResourceName('api-handler-arn'),
+        description: "API Handler Lambda function ARN",
+        exportName: stageConfig.getResourceName("api-handler-arn"),
       },
       ApiEndpoint: {
         value: api.api.url,
-        description: 'API Gateway endpoint URL',
-        exportName: stageConfig.getResourceName('api-endpoint'),
+        description: "API Gateway endpoint URL",
+        exportName: stageConfig.getResourceName("api-endpoint"),
       },
       StorageBucketName: {
         value: storageBucket.bucketName,
-        description: 'Storage bucket name',
-        exportName: stageConfig.getResourceName('storage-bucket-name'),
+        description: "Storage bucket name",
+        exportName: stageConfig.getResourceName("storage-bucket-name"),
       },
     };
 
@@ -609,8 +727,8 @@ export class BackendStack extends cdk.Stack {
     if (authorizerLambda) {
       outputs.AuthorizerLambdaArn = {
         value: authorizerLambda.functionArn,
-        description: 'Authorizer Lambda function ARN',
-        exportName: stageConfig.getResourceName('authorizer-lambda-arn'),
+        description: "Authorizer Lambda function ARN",
+        exportName: stageConfig.getResourceName("authorizer-lambda-arn"),
       };
     }
 

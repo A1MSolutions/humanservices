@@ -19,13 +19,13 @@ print_usage() {
     echo "      content: Deploy content updates"
     echo "      parsers: Deploy and invoke parsers"
     echo "      text-extractor: Deploy text extractor lambda"
-    echo "  -d: Domain name for API (default: policyconnector.digital, use 'none' to deploy without domain)"
+    echo "  -d: Domain name for API (default: \$DEFAULT_DOMAIN or humanservices.policyconnector.digital, use 'none' to deploy without domain)"
 }
 
 # Default values
 ENVIRONMENT="prod"
 DEPLOY_TYPE="all"
-DOMAIN_NAME="policyconnector.digital"
+DOMAIN_NAME="${DEFAULT_DOMAIN:-humanservices.policyconnector.digital}"
 
 # Parse command line arguments
 while getopts "he:t:d:" opt; do
@@ -93,7 +93,7 @@ check_dependencies() {
 # Function to deploy static assets infrastructure
 deploy_static() {
     echo "Deploying static assets infrastructure..."
-    npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-static" -- \
+    npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-static" -- \
         --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
         -c environment=${ENVIRONMENT} \
         -c deploymentType=infrastructure \
@@ -105,7 +105,7 @@ deploy_static() {
 deploy_api() {
     if [ -n "${DOMAIN_NAME}" ] && [ "${DOMAIN_NAME}" != "none" ]; then
         echo "Deploying API stack with domain: ${DOMAIN_NAME}..."
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-api" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-api" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=${DOMAIN_NAME} \
@@ -113,7 +113,7 @@ deploy_api() {
     else
         echo "Deploying API stack without custom domain..."
         # Pass domainName=false to explicitly override the default in the CDK app
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-api" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-api" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=false \
@@ -136,7 +136,7 @@ deploy_content() {
             echo "Warning: Custom domain not accessible yet. Using default API URL."
             # Get the API URL from CloudFormation outputs
             API_URL=$(aws cloudformation describe-stacks \
-                --stack-name "a1m-eregs-${ENVIRONMENT}-api" \
+                --stack-name "a1m-eregs-hs-${ENVIRONMENT}-api" \
                 --query 'Stacks[0].Outputs[?OutputKey==`ApiEndpoint`].OutputValue' \
                 --output text)
             export VITE_API_URL="${API_URL}"
@@ -160,7 +160,7 @@ deploy_content() {
     cd ../../cdk-eregs || exit 1
 
     echo "Deploying content to CloudFront..."
-    npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-static" -- \
+    npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-static" -- \
         --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
         -c environment=${ENVIRONMENT} \
         -c deploymentType=content \
@@ -174,14 +174,14 @@ deploy_parsers() {
     # Include domain name context to ensure parsers use the correct API endpoint
     if [ -n "${DOMAIN_NAME}" ] && [ "${DOMAIN_NAME}" != "none" ]; then
         echo "Deploying parsers with domain context: ${DOMAIN_NAME}..."
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-ecfr-parser" "a1m-eregs-${ENVIRONMENT}-fr-parser" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-ecfr-parser" "a1m-eregs-hs-${ENVIRONMENT}-fr-parser" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=${DOMAIN_NAME} \
             --require-approval never
     else
         echo "Deploying parsers without custom domain context..."
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-ecfr-parser" "a1m-eregs-${ENVIRONMENT}-fr-parser" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-ecfr-parser" "a1m-eregs-hs-${ENVIRONMENT}-fr-parser" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=false \
@@ -196,14 +196,14 @@ deploy_text_extractor() {
     # Include domain name context to ensure text extractor uses the correct API endpoint
     if [ -n "${DOMAIN_NAME}" ] && [ "${DOMAIN_NAME}" != "none" ]; then
         echo "Deploying text extractor with domain context: ${DOMAIN_NAME}..."
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-text-extractor" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-text-extractor" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=${DOMAIN_NAME} \
             --require-approval never
     else
         echo "Deploying text extractor without custom domain context..."
-        npm run cdk deploy "a1m-eregs-${ENVIRONMENT}-text-extractor" -- \
+        npm run cdk deploy "a1m-eregs-hs-${ENVIRONMENT}-text-extractor" -- \
             --app "npx ts-node --prefer-ts-exts bin/cdk-eregs.ts" \
             -c environment=${ENVIRONMENT} \
             -c domainName=false \

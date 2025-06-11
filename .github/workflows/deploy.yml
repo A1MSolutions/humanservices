@@ -41,4 +41,5 @@ jobs:
         run: |
           cd cdk-eregs
           chmod +x deploy.sh
-          ./deploy.sh -e prod -t all -d policyconnector.digital
+          export DEFAULT_DOMAIN="${{ vars.DEFAULT_DOMAIN || 'humanservices.policyconnector.digital' }}"
+          ./deploy.sh -e prod -t all -d "${DEFAULT_DOMAIN}"
