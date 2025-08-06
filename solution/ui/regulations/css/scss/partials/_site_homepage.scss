@@ -393,7 +393,7 @@
                 }
             }
         }
-        
+
 	    .featured {
             margin-top: 20px;
             margin-bottom: 20px;
@@ -409,7 +409,7 @@
 
             @media (max-width: 629px) {
                 flex-direction: column;
-                
+
                 > .featured-materials {
                     min-width: 100%;
                 }
@@ -745,14 +745,3 @@
     }
 }
 
-/* Custom list style with Font Awesome carets */
-.featured-materials__text ul {
-  list-style: none;
-  padding-left: .3em;
-  margin-left: .3em;
-}
-
-.featured-materials__text ul li .fa {
-  margin-right: .4em;
-  color: $tertiary_text_color;
-}
