@@ -23,6 +23,13 @@ display: block;
 margin-top: 1em;
 margin-bottom: 1em;
 }
+.lbexTocSubChapterOLC, .lbexTocSubTitleOLC, .lbexTocDivisionOLC {
+font-size: 110%;
+font-weight: bold;
+display: block;
+margin-top: 1em;
+margin-bottom: 1em;
+}
 .lbexSubChapterLevelOLC, .lbexSubTitleLevelOLC, .lbexChapterLevelOLC {
 display: block;
 margin-top: 1em;
@@ -132,10 +139,10 @@ margin-bottom: 1em;
     <a href="#toc-H00A124B5E74D481E9C40B11626C9DADE" id="H00A124B5E74D481E9C40B11626C9DADE">Subtitle B—Health</a>
 </div>
 <div class="lbexTocDivisionOLC">
-    <a href="#toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C" id="H1F2AC7DAAC144B50AAB0E9E039D9BE3C">CHAPTER 1—MEDICAID</a>
+    <a href="#toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C" id="H1F2AC7DAAC144B50AAB0E9E039D9BE3C">Chapter 1—Medicaid</a>
 </div>
 <div class="lbexTocSubChapterOLC">
-    <a href="#toc-H92BA8B5040914BF4B6F9A50225F8E976" id="H92BA8B5040914BF4B6F9A50225F8E976">SUBCHAPTER A—REDUCING FRAUD AND IMPROVING ENROLLMENT PROCESSES</a>
+    <a href="#toc-H92BA8B5040914BF4B6F9A50225F8E976" id="H92BA8B5040914BF4B6F9A50225F8E976">Subchapter A—Reducing fraud and improving enrollment processes</a>
 </div>
 <span class="lbexTocSectionOLC">
     <a href="#toc-H8DEEC3F1F40E4CD390DAC8E9F3F90B6C" id="H8DEEC3F1F40E4CD390DAC8E9F3F90B6C">Sec. 71101. Moratorium on implementation of rule relating to eligibility and enrollment in Medicare Savings Programs.</a>
@@ -168,7 +175,7 @@ margin-bottom: 1em;
     <a href="#toc-H01B260BD1A734C8384AF364D82D3132E" id="H01B260BD1A734C8384AF364D82D3132E">Sec. 71110. Expansion FMAP for emergency Medicaid.</a>
 </span>
 <div class="lbexTocSubChapterOLC">
-    <a href="#toc-H7D8B025C07364BD8B6BD2B6E5C3D1861" id="H7D8B025C07364BD8B6BD2B6E5C3D1861">SUBCHAPTER B—PREVENTING WASTEFUL SPENDING</a>
+    <a href="#toc-H7D8B025C07364BD8B6BD2B6E5C3D1861" id="H7D8B025C07364BD8B6BD2B6E5C3D1861">Subchapter B—Preventing wasteful spending</a>
 </div>
 <span class="lbexTocSectionOLC">
     <a href="#toc-H72D966A2232743E5A94F076C68AE84D0" id="H72D966A2232743E5A94F076C68AE84D0">Sec. 71111. Moratorium on implementation of rule relating to staffing standards for long-term care facilities under the Medicare and Medicaid programs.</a>
@@ -180,7 +187,7 @@ margin-bottom: 1em;
     <a href="#toc-H4C4222AD5DC6485391D3BF42FAE4785C" id="H4C4222AD5DC6485391D3BF42FAE4785C">Sec. 71113. Federal payments to prohibited entities.</a>
 </span>
 <div class="lbexTocSubChapterOLC">
-    <a href="#toc-H33AAEB14AE494C8981C870486D3E3901" id="H33AAEB14AE494C8981C870486D3E3901">SUBCHAPTER C—STOPPING ABUSIVE FINANCING PRACTICES</a>
+    <a href="#toc-H33AAEB14AE494C8981C870486D3E3901" id="H33AAEB14AE494C8981C870486D3E3901">Subchapter C—Stopping abusive financing practices</a>
 </div>
 <span class="lbexTocSectionOLC">
     <a href="#toc-H027BCCE030064EC1801736510E3BFF79" id="H027BCCE030064EC1801736510E3BFF79">Sec. 71114. Sunsetting increased FMAP incentive.</a>
@@ -198,7 +205,7 @@ margin-bottom: 1em;
     <a href="#toc-H3DFC92C358834F5B82DE8AB81465692A" id="H3DFC92C358834F5B82DE8AB81465692A">Sec. 71118. Requiring budget neutrality for Medicaid demonstration projects under section 1115.</a>
 </span>
 <div class="lbexTocSubChapterOLC">
-    <a href="#toc-H41B4BE6053784F329BB924FD89F29721" id="H41B4BE6053784F329BB924FD89F29721">SUBCHAPTER D—INCREASING PERSONAL ACCOUNTABILITY</a>
+    <a href="#toc-H41B4BE6053784F329BB924FD89F29721" id="H41B4BE6053784F329BB924FD89F29721">Subchapter D—Increasing personal accountability</a>
 </div>
 <span class="lbexTocSectionOLC">
     <a href="#toc-HE10C293F1AD14FEE88FED90835BFBB2D" id="HE10C293F1AD14FEE88FED90835BFBB2D">Sec. 71119. Requirement for States to establish Medicaid community engagement requirements for certain individuals.</a>
@@ -207,7 +214,7 @@ margin-bottom: 1em;
     <a href="#toc-H4ADCA385302C45CCBDC2C4550A5A6759" id="H4ADCA385302C45CCBDC2C4550A5A6759">Sec. 71120. Modifying cost sharing requirements for certain expansion individuals under the Medicaid program.</a>
 </span>
 <div class="lbexTocSubChapterOLC">
-    <a href="#toc-H2388F94754554D3C9E54A32152DEE520" id="H2388F94754554D3C9E54A32152DEE520">SUBCHAPTER E—EXPANDING ACCESS TO CARE</a>
+    <a href="#toc-H2388F94754554D3C9E54A32152DEE520" id="H2388F94754554D3C9E54A32152DEE520">Subchapter E—Expanding Access to Care</a>
 </div>
 <span class="lbexTocSectionOLC">
     <a href="#toc-H09652BCC85234E4FAAAC9D9A805494AF" id="H09652BCC85234E4FAAAC9D9A805494AF">Sec. 71121. Making certain adjustments to coverage of home or community-based services under Medicaid.</a>
@@ -220,7 +227,7 @@ margin-bottom: 1em;
 </div>
 <div>
     <a href="#H1F2AC7DAAC144B50AAB0E9E039D9BE3C" id="toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C">
-    <span class="lbexChapterLevelOLC">CHAPTER 1 — MEDICAID</span>
+    <span class="lbexChapterLevelOLC">Chapter 1 — Medicaid</span>
     </a>
 </div>
 <div>
@@ -232,7 +239,7 @@ margin-bottom: 1em;
 <span class="lbexHang">
     <a href="#H8DEEC3F1F40E4CD390DAC8E9F3F90B6C" id="toc-H8DEEC3F1F40E4CD390DAC8E9F3F90B6C">
         <span class="lbexHangWithMargin" id="H8DEEC3F1F40E4CD390DAC8E9F3F90B6C">
-            <span class="lbexSectionlevelOLC">SEC. 71101. </span>
+            <span class="lbexSectionlevelOLC">Sec. 71101. </span>
             <span class="lbexSectionlevelOLC">
                 <span class="lbexAllcap">Moratorium on implementation of rule relating to eligibility and enrollment in Medicare Savings Programs</span>.
             </span>
@@ -262,7 +269,7 @@ margin-bottom: 1em;
 <span class="lbexHang">
     <a href="#H6CCF8B8A04E04A36847FD683A259E8DC" id="toc-H6CCF8B8A04E04A36847FD683A259E8DC">
         <span class="lbexHangWithMargin" id="H6CCF8B8A04E04A36847FD683A259E8DC">
-            <span class="lbexSectionlevelOLC">SEC. 71102. </span>
+            <span class="lbexSectionlevelOLC">Sec. 71102. </span>
             <span class="lbexSectionlevelOLC">
                 <span class="lbexAllcap">Moratorium on implementation of rule relating to eligibility and enrollment for Medicaid, CHIP, and the Basic Health Program</span>.
             </span>
@@ -340,7 +347,7 @@ margin-bottom: 1em;
     <a href="#HA52179FF1EA542DA88936E2159BEFC99" id="toc-HA52179FF1EA542DA88936E2159BEFC99">
     <span class="lbexHangWithMargin">
         <span id="HA52179FF1EA542DA88936E2159BEFC99"> </span>
-        <span class="lbexSectionlevelOLC">SEC. 71103. </span>
+        <span class="lbexSectionlevelOLC">Sec. 71103. </span>
         <span class="lbexSectionlevelOLC">
             <span class="lbexAllcap">Reducing duplicate enrollment under the Medicaid and CHIP programs</span>.
         </span>
@@ -498,7 +505,7 @@ margin-bottom: 1em;
     <a href="#H968D7B63B96D4B7F849C3F7D820864FE" id="toc-H968D7B63B96D4B7F849C3F7D820864FE">
     <span class="lbexHangWithMargin">
     <span id="H968D7B63B96D4B7F849C3F7D820864FE"> </span>
-    <span class="lbexSectionlevelOLC">SEC. 71104. </span>
+    <span class="lbexSectionlevelOLC">Sec. 71104. </span>
         <span class="lbexSectionlevelOLC">
             <span class="lbexAllcap">Ensuring deceased individuals do not remain enrolled</span>.
         </span>
@@ -563,7 +570,7 @@ margin-bottom: 1em;
 <a href="#HCA190EE79A494B7B807E4370E04565D6" id="toc-HCA190EE79A494B7B807E4370E04565D6">
 <span class="lbexHangWithMargin">
 <span id="HCA190EE79A494B7B807E4370E04565D6"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71105. </span>
+<span class="lbexSectionlevelOLC">Sec. 71105. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Ensuring deceased providers do not remain enrolled</span>.
 </span>
@@ -594,7 +601,7 @@ margin-bottom: 1em;
 <a href="#HE4C5D821764A4ED89B23CB28D9795390" id="toc-HE4C5D821764A4ED89B23CB28D9795390">
 <span class="lbexHangWithMargin">
 <span id="HE4C5D821764A4ED89B23CB28D9795390"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71106. </span>
+<span class="lbexSectionlevelOLC">Sec. 71106. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Payment reduction related to certain erroneous excess payments under Medicaid</span>.
 </span>
@@ -654,7 +661,7 @@ margin-bottom: 1em;
 <a href="#H606041EC9E7F4E47BF27FA785F990CD4" id="toc-H606041EC9E7F4E47BF27FA785F990CD4">
 <span class="lbexHangWithMargin">
 <span id="H606041EC9E7F4E47BF27FA785F990CD4"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71107. </span>
+<span class="lbexSectionlevelOLC">Sec. 71107. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Eligibility redeterminations</span>.
 </span>
@@ -695,7 +702,7 @@ margin-bottom: 1em;
 <a href="#HAC580CB2660842A98524C26BC39A0B5D" id="toc-HAC580CB2660842A98524C26BC39A0B5D">
 <span class="lbexHangWithMargin">
 <span id="HAC580CB2660842A98524C26BC39A0B5D"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71108. </span>
+<span class="lbexSectionlevelOLC">Sec. 71108. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Revising home equity limit for determining eligibility for long-term care services under the Medicaid program</span>.
 </span>
@@ -774,7 +781,7 @@ margin-bottom: 1em;
 <a href="#H81AF8E812F034407AFF9A4E9B8533848" id="toc-H81AF8E812F034407AFF9A4E9B8533848">
 <span class="lbexHangWithMargin">
 <span id="H81AF8E812F034407AFF9A4E9B8533848"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71109. </span>
+<span class="lbexSectionlevelOLC">Sec. 71109. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Alien Medicaid eligibility</span>.
 </span>
@@ -832,7 +839,7 @@ margin-bottom: 1em;
 <a href="#H01B260BD1A734C8384AF364D82D3132E" id="toc-H01B260BD1A734C8384AF364D82D3132E">
 <span class="lbexHangWithMargin">
 <span id="H01B260BD1A734C8384AF364D82D3132E"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71110. </span>
+<span class="lbexSectionlevelOLC">Sec. 71110. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Expansion FMAP for emergency Medicaid</span>.
 </span>
@@ -864,7 +871,7 @@ margin-bottom: 1em;
 <a href="#H72D966A2232743E5A94F076C68AE84D0" id="toc-H72D966A2232743E5A94F076C68AE84D0">
 <span class="lbexHangWithMargin">
 <span id="H72D966A2232743E5A94F076C68AE84D0"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71111. </span>
+<span class="lbexSectionlevelOLC">Sec. 71111. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Moratorium on implementation of rule relating to staffing standards for long-term care facilities under the Medicare and Medicaid programs</span>.
 </span>
@@ -886,7 +893,7 @@ margin-bottom: 1em;
 <a href="#H917F6C03CA464B319B70F26A163C0EE0" id="toc-H917F6C03CA464B319B70F26A163C0EE0">
 <span class="lbexHangWithMargin">
 <span id="H917F6C03CA464B319B70F26A163C0EE0"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71112. </span>
+<span class="lbexSectionlevelOLC">Sec. 71112. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Reducing State Medicaid costs</span>.
 </span>
@@ -939,7 +946,7 @@ margin-bottom: 1em;
 <a href="#H4C4222AD5DC6485391D3BF42FAE4785C" id="toc-H4C4222AD5DC6485391D3BF42FAE4785C">
 <span class="lbexHangWithMargin">
 <span id="H4C4222AD5DC6485391D3BF42FAE4785C"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71113. </span>
+<span class="lbexSectionlevelOLC">Sec. 71113. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Federal payments to prohibited entities</span>.
 </span>
@@ -997,7 +1004,7 @@ margin-bottom: 1em;
 <a href="#H027BCCE030064EC1801736510E3BFF79" id="toc-H027BCCE030064EC1801736510E3BFF79">
 <span class="lbexHangWithMargin">
 <span id="H027BCCE030064EC1801736510E3BFF79"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71114. </span>
+<span class="lbexSectionlevelOLC">Sec. 71114. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Sunsetting increased FMAP incentive</span>.
 </span>
@@ -1029,7 +1036,7 @@ margin-bottom: 1em;
 <a href="#HC5CF4567712D420786321990FC6F05A3" id="toc-HC5CF4567712D420786321990FC6F05A3">
 <span class="lbexHangWithMargin">
 <span id="HC5CF4567712D420786321990FC6F05A3"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71115. </span>
+<span class="lbexSectionlevelOLC">Sec. 71115. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Provider taxes</span>.
 </span>
@@ -1109,7 +1116,7 @@ margin-bottom: 1em;
 <a href="#H5095A31A390141E1AF3A2DAD32DD6532" id="toc-H5095A31A390141E1AF3A2DAD32DD6532">
 <span class="lbexHangWithMargin">
 <span id="H5095A31A390141E1AF3A2DAD32DD6532"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71116. </span>
+<span class="lbexSectionlevelOLC">Sec. 71116. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">State directed payments</span>.
 </span>
@@ -1183,7 +1190,7 @@ margin-bottom: 1em;
 <a href="#HFC9712978086448A884AD4DA6242CFF0" id="toc-HFC9712978086448A884AD4DA6242CFF0">
 <span class="lbexHangWithMargin">
 <span id="HFC9712978086448A884AD4DA6242CFF0"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71117. </span>
+<span class="lbexSectionlevelOLC">Sec. 71117. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Requirements regarding waiver of uniform tax requirement for Medicaid provider tax</span>.
 </span>
@@ -1260,7 +1267,7 @@ margin-bottom: 1em;
 <a href="#H3DFC92C358834F5B82DE8AB81465692A" id="toc-H3DFC92C358834F5B82DE8AB81465692A">
 <span class="lbexHangWithMargin">
 <span id="H3DFC92C358834F5B82DE8AB81465692A"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71118. </span>
+<span class="lbexSectionlevelOLC">Sec. 71118. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Requiring budget neutrality for Medicaid demonstration projects under section 1115</span>.
 </span>
@@ -1298,7 +1305,7 @@ margin-bottom: 1em;
 <a href="#HE10C293F1AD14FEE88FED90835BFBB2D" id="toc-HE10C293F1AD14FEE88FED90835BFBB2D">
 <span class="lbexHangWithMargin">
 <span id="HE10C293F1AD14FEE88FED90835BFBB2D"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71119. </span>
+<span class="lbexSectionlevelOLC">Sec. 71119. </span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Requirement for States to establish Medicaid community engagement requirements for certain individuals</span>.
 </span>
@@ -1657,7 +1664,7 @@ margin-bottom: 1em;
 <a href="#H4ADCA385302C45CCBDC2C4550A5A6759" id="toc-H4ADCA385302C45CCBDC2C4550A5A6759">
 <span class="lbexHangWithMargin">
 <span id="H4ADCA385302C45CCBDC2C4550A5A6759"> </span>
-<span class="lbexSectionlevelOLC">SEC. 71120.</span>
+<span class="lbexSectionlevelOLC">Sec. 71120.</span>
 <span class="lbexSectionlevelOLC">
 <span class="lbexAllcap">Modifying cost sharing requirements for certain expansion individuals under the Medicaid program</span>.
 </span>
@@ -1745,7 +1752,7 @@ margin-bottom: 1em;
     <a href="#H09652BCC85234E4FAAAC9D9A805494AF" id="toc-H09652BCC85234E4FAAAC9D9A805494AF">
     <span class="lbexHangWithMargin">
         <span id="H09652BCC85234E4FAAAC9D9A805494AF"> </span>
-        <span class="lbexSectionlevelOLC">SEC. 71121. </span>
+        <span class="lbexSectionlevelOLC">Sec. 71121. </span>
         <span class="lbexSectionlevelOLC">
             <span class="lbexAllcap">Making certain adjustments to coverage of home or community-based services under Medicaid</span>.
         </span>
