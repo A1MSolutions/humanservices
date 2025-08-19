@@ -7,6 +7,10 @@ import HeaderDropdownMenu from "./HeaderDropdownMenu.vue";
 import HeaderLink from "./HeaderLink.vue";
 
 const props = defineProps({
+    statutesUrl: {
+        type: String,
+        required: true,
+    },
     subjectsUrl: {
         type: String,
         required: true,
@@ -16,6 +20,12 @@ const props = defineProps({
 defineEmits(["link-clicked"]);
 
 const links = [
+    {
+        name: "statutes",
+        label: "OBBBA",
+        active: window.location.pathname.includes("statutes"),
+        href: props.statutesUrl,
+    },
     {
         name: "subjects",
         label: "Research a Subject",
