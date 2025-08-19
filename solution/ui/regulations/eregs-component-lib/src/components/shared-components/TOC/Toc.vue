@@ -22,20 +22,43 @@ const titleLabel = computed(() =>
     )
 );
 
-const directChild = computed(() =>
-    props.structure.children.find(
-        (child) => child.type === "chapter" || child.type === "subtitle"
-    )
+const directChild = computed(() => {
+    const directChapter = props.structure.children.find(
+        (child) => child.type === "chapter"
+    );
+    if (directChapter) return directChapter;
+
+    const subtitle = props.structure.children.find(
+        (child) => child.type === "subtitle"
+    );
+    if (subtitle && Array.isArray(subtitle.children)) {
+        const chapterUnderSubtitle = subtitle.children.find(
+            (child) => child.type === "chapter"
+        );
+        if (chapterUnderSubtitle) return chapterUnderSubtitle;
+        return subtitle;
+    }
+    return undefined;
+});
+
+const subtitleChild = computed(() =>
+    props.structure.children.find((child) => child.type === "subtitle")
 );
 
-const titleSubheading = computed(() =>
-    directChild.value
-        ? `${directChild.value.label_level} - ${directChild.value.label_description}`.replace(
-            /&amp;/g,
-            "&"
-        )
-        : undefined
-);
+const titleSubheading = computed(() => {
+    const chapter = directChild.value;
+    const subtitle = subtitleChild.value;
+
+    const chapterStr = chapter && chapter.type === "chapter"
+        ? `${chapter.label_level} - ${chapter.label_description}`
+        : undefined;
+    const subtitleStr = subtitle
+        ? `${subtitle.label_level} - ${subtitle.label_description}`
+        : undefined;
+
+    const combined = [subtitleStr, chapterStr].filter(Boolean).join(" | ");
+    return combined ? combined.replace(/&amp;/g, "&") : undefined;
+});
 </script>
 
 <template>
