@@ -76,17 +76,23 @@ class WebBackend(FileBackend):
         except Exception as e:
             raise BackendException(f"failed to parse robots.txt, must assume we are not allowed to look at the URL: {str(e)}")
 
-        # Figure out of robots.txt allows us to crawl the URL
+        # Figure out if robots.txt allows us to crawl the URL
         logger.debug("Determining if \"%s\" can crawl the path.", self._user_agent)
         if not self._can_fetch(uri):
             raise BackendException(f"robots.txt has disallowed crawling of \"{uri}\"")
 
-        while True:  # Loop until the lambda times out, max of 15 mins
+        max_retries = 3
+        retry_count = 0
+
+        while retry_count < max_retries:
             try:
                 logger.debug("Sending GET request to %s with headers: %s", uri, str(self._headers))
                 resp = requests.get(uri, timeout=60, headers=self._headers)
             except requests.exceptions.Timeout:
-                logger.warning("GET request timed out. Retrying in %i seconds.", self._retry_timeout)
+                retry_count += 1
+                if retry_count >= max_retries:
+                    raise BackendException(f"GET request timed out after {max_retries} attempts")
+                logger.warning("GET request timed out. Retrying in %i seconds. (Attempt %d/%d)", self._retry_timeout, retry_count, max_retries)
                 time.sleep(self._retry_timeout)
                 continue
             except requests.exceptions.RequestException as e:
@@ -100,7 +106,10 @@ class WebBackend(FileBackend):
                 time.sleep(retry)
                 continue
             elif resp.status_code == requests.codes.TOO_MANY:
-                logger.warning("Got a 'too many requests' error for \"%s\". Retrying in %i seconds.", uri, self._retry_timeout)
+                retry_count += 1
+                if retry_count >= max_retries:
+                    raise BackendException(f"Too many requests error after {max_retries} attempts")
+                logger.warning("Got a 'too many requests' error for \"%s\". Retrying in %i seconds. (Attempt %d/%d)", uri, self._retry_timeout, retry_count, max_retries)
                 time.sleep(self._retry_timeout)
                 continue
             else:
