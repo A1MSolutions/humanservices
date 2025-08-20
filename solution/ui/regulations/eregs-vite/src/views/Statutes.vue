@@ -130,14 +130,14 @@ margin-bottom: 1em;
             <div id="main-content" class="statute__container">
                 <div class="content">
                     <div>
-                        <h1>Recent Legislation</h1>
+                        <h1>Statute Reference</h1>
 
-                        <p><i>The following is an excerpt from <a href="https://www.congress.gov/bill/119th-congress/house-bill/1">H.R.1 - One Big Beautiful Bill Act</a>.</i></p>
+                        <p>The following is an excerpt from <a href="https://www.congress.gov/bill/119th-congress/house-bill/1/text" class="external" target="_blank">H.R.1 - One Big Beautiful Bill Act</a>, Title VII — Finance, Subtitle B — Health.</p>
 
 
-<div class="lbexTocSubTitleOLC">
+<!--<div class="lbexTocSubTitleOLC">
     <a href="#toc-H00A124B5E74D481E9C40B11626C9DADE" id="H00A124B5E74D481E9C40B11626C9DADE">Subtitle B—Health</a>
-</div>
+</div>-->
 <div class="lbexTocDivisionOLC">
     <a href="#toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C" id="H1F2AC7DAAC144B50AAB0E9E039D9BE3C">Chapter 1—Medicaid</a>
 </div>
@@ -220,11 +220,11 @@ margin-bottom: 1em;
     <a href="#toc-H09652BCC85234E4FAAAC9D9A805494AF" id="H09652BCC85234E4FAAAC9D9A805494AF">Sec. 71121. Making certain adjustments to coverage of home or community-based services under Medicaid.</a>
 </span>
 
-<div>
+<!--<div>
     <a href="#H00A124B5E74D481E9C40B11626C9DADE" id="toc-H00A124B5E74D481E9C40B11626C9DADE">
     <span class="lbexSubTitleLevelOLC">Subtitle B — Health</span>
     </a>
-</div>
+</div>-->
 <div>
     <a href="#H1F2AC7DAAC144B50AAB0E9E039D9BE3C" id="toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C">
     <span class="lbexChapterLevelOLC">Chapter 1 — Medicaid</span>

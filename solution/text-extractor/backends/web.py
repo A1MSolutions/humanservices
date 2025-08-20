@@ -22,15 +22,20 @@ class WebBackend(FileBackend):
         self._parser = robotparser.RobotFileParser()
         self._headers = requests.utils.default_headers()
         self._headers["User-Agent"] = self._user_agent
-        
+
         # Allowlist of domains with known robots.txt issues
         self._allowlist_domains = config.get("allowlist_domains", [
-            "mspb.gov", # https://www.mspb.gov/robots.txt redirects to an error page
-            "www.mspb.gov",
+            "fns.usda.gov",
+            "www.fns.usda.gov",
+            "acf.gov",
+            "www.congress.gov",
+            "medicaiddirectors.org",
+            "aspe.hhs.gov",
+            "www.cbpp.org",
         ])
 
     def _get_robots_txt(self, url: str):
-        
+
         # Parse the URL to get the domain
         parsed_url = urlsplit(url)
         domain = parsed_url.netloc

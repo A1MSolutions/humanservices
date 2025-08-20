@@ -79,9 +79,9 @@ export default {
                 />
             </v-window-item>
             <v-window-item>
-                <p class="recent-rules-descriptive-text">
+                <!--<p class="recent-rules-descriptive-text">
                     Includes selected parts of 5 CFR
-                </p>
+                </p>-->
                 <RecentChangesContainer
                     :api-url="apiUrl"
                     type="rules"
