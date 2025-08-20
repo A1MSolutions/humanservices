@@ -15,7 +15,7 @@ class WebBackend(FileBackend):
     backend = "web"
 
     _retry_timeout = 30
-    _user_agent = "PolicyConnectorTextExtractorBot/1.0"
+    _user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:140.0) Gecko/20100101 Firefox/140.0"
 
     def __init__(self, config: dict):
         self._ignore_robots = config.get("ignore_robots_txt", False)
