@@ -86,8 +86,8 @@ class WebBackend(FileBackend):
                 logger.debug("Sending GET request to %s with headers: %s", uri, str(self._headers))
                 resp = requests.get(uri, timeout=60, headers=self._headers)
             except requests.exceptions.Timeout:
-                logger.warning("GET request timed out. Retrying in %i seconds.", self.retry_timeout)
-                time.sleep(self.retry_timeout)
+                logger.warning("GET request timed out. Retrying in %i seconds.", self._retry_timeout)
+                time.sleep(self._retry_timeout)
                 continue
             except requests.exceptions.RequestException as e:
                 raise BackendException(f"GET request failed: {str(e)}")
@@ -100,8 +100,8 @@ class WebBackend(FileBackend):
                 time.sleep(retry)
                 continue
             elif resp.status_code == requests.codes.TOO_MANY:
-                logger.warning("Got a 'too many requests' error for \"%s\". Retrying in %i seconds.", uri, self.retry_timeout)
-                time.sleep(self.retry_timeout)
+                logger.warning("Got a 'too many requests' error for \"%s\". Retrying in %i seconds.", uri, self._retry_timeout)
+                time.sleep(self._retry_timeout)
                 continue
             else:
                 raise BackendException(f"GET request failed with a {resp.status_code} code: '{resp.content}'")
