@@ -18,87 +18,64 @@ const username = inject("username");
 
 </script>
 <style>
-.lbexTocSectionOLC {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
+
+.annotated-text {
+  background-color: #F2F2F2;
 }
-.lbexTocSubChapterOLC, .lbexTocSubTitleOLC, .lbexTocDivisionOLC {
-font-size: 110%;
-font-weight: bold;
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-}
-.lbexSubChapterLevelOLC, .lbexSubTitleLevelOLC, .lbexChapterLevelOLC {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-font-size: 150%;
-font-weight: bold;
-}
-.lbexHang {
-font-size: 120%;
-font-weight: bold;
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-}
-.lbexindent {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 1em;
-}
-.lbexIndentParagraph {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 2em;
-}
-.lbexIndentSectionText {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-}
-.lbexIndentSubpar {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 2em;
-}
-.lbexIndentClause {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 2em;
-}
-.lbexIndentSubclause {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 3em;
-}
-.lbexIndentSubsection {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-}
-.lbexIndentItem {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-margin-left: 4em;
-}
-.lbexIndentSubItem {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
-}
+
+.lbexTocSectionOLC,
+.lbexIndent,
+.lbexIndentSectionText,
 .ul {
-display: block;
-margin-top: 1em;
-margin-bottom: 1em;
+  display: block;
+  margin: 1em 0;
+}
+
+.lbexTocSubChapterOLC,
+.lbexTocSubTitleOLC {
+  font-size: 110%;
+  font-weight: bold;
+  display: block;
+  margin: 1em 0;
+}
+
+.lbexTocDivisionOLC,
+.lbexHang {
+  font-size: 120%;
+  font-weight: bold;
+  display: block;
+  margin: 1em 0;
+}
+
+.lbexSubChapterLevelOLC,
+.lbexSubTitleLevelOLC,
+.lbexChapterLevelOLC {
+  font-size: 150%;
+  font-weight: bold;
+  display: block;
+  margin: 1em 0;
+}
+
+.lbexIndentParagraph,
+.lbexIndentSubpar,
+.lbexIndentClause,
+.lbexIndentSubclause,
+.lbexIndentItem,
+.lbexIndentSubItem {
+  display: block;
+  margin: 1em 0 1em 0;
+  padding-left: 2em;
+  border-left: 1px solid #d0d0d0;
+}
+
+.lbexIndentSubsection {
+  display: block;
+  background-color: #F2F2F2;
+}
+
+.lbexSectionLevelOLCnuclear,
+.lbexSectionTitleTrad {
+  font-weight: 700;
 }
 </style>
 <template>
