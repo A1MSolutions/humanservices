@@ -128,6 +128,37 @@ const username = inject("username");
                 </p>
 
                 <div class="lbexTocDivisionOLC">
+                    <a href="#toc-idb7089321a3ed4cfd93ceaa1e26e14c16" id="idb7089321a3ed4cfd93ceaa1e26e14c16">Title I — Committee on Agriculture, Nutrition, and Forestry</a>
+                </div>
+                <div class="lbexTocSubTitleOLC">
+                    <a href="#toc-id7a3536fb20f04466bad673498919c671" id="id7a3536fb20f04466bad673498919c671">Subtitle A — Nutrition</a>
+                </div>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id12e60ee513f5480c95239787b4b60b0a" id="id12e60ee513f5480c95239787b4b60b0a">Sec. 10101. Re-evaluation of thrifty food plan.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id3ad3484895a5415297d0457ba22bf62a" id="id3ad3484895a5415297d0457ba22bf62a">Sec. 10102. Modifications to SNAP work requirements for able-bodied adults.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id43a0ca68492a4fc3a1d6d146cb3c409f" id="id43a0ca68492a4fc3a1d6d146cb3c409f">Sec. 10103. Availability of standard utility allowances based on receipt of energy assistance.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id04a338a3c9104054aaf36a4f216f262e" id="id04a338a3c9104054aaf36a4f216f262e">Sec. 10104. Restrictions on internet expenses.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id88e200dd6fa94fbba1bccfdcd7b3f9c6" id="id88e200dd6fa94fbba1bccfdcd7b3f9c6">Sec. 10105. Matching funds requirements.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id99f94fac3f124dc59ec190ded5a8c989" id="id99f94fac3f124dc59ec190ded5a8c989">Sec. 10106. Administrative cost sharing.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-id32d8c2b060954bc880c5641f1e3ebc98" id="id32d8c2b060954bc880c5641f1e3ebc98">Sec. 10107. National education and obesity prevention grant program.</a>
+                </span>
+                <span class="lbexTocSectionOLC">
+                    <a href="#toc-ida84275cf43a848eba7f831b8ede59bb6" id="ida84275cf43a848eba7f831b8ede59bb6">Sec. 10108. Alien SNAP eligibility.</a>
+                </span>
+
+                <div class="lbexTocDivisionOLC">
                     <a href="#toc-id22c6b45a6458467eadd2f1c0d1e80f8c" id="id22c6b45a6458467eadd2f1c0d1e80f8c">Title VII — Finance</a>
                 </div>
                 <div class="lbexTocSubTitleOLC">
@@ -214,6 +245,368 @@ const username = inject("username");
                 <span class="lbexTocSectionOLC">
                     <a id="H09652BCC85234E4FAAAC9D9A805494AF" href="#toc-H09652BCC85234E4FAAAC9D9A805494AF">Sec. 71121. Making certain adjustments to coverage of home or community-based services under Medicaid.</a>
                 </span>
+
+
+
+
+                <a id="idb7089321a3ed4cfd93ceaa1e26e14c16"> </a>
+                <a href="#idb7089321a3ed4cfd93ceaa1e26e14c16" id="toc-idb7089321a3ed4cfd93ceaa1e26e14c16">
+                    <span class="lbexTitleLevelOLC">Title I — Committee on Agriculture, Nutrition, and Forestry</span>
+                </a>
+
+                <a id="id7a3536fb20f04466bad673498919c671"> </a>
+                <a href="#id7a3536fb20f04466bad673498919c671" id="toc-id7a3536fb20f04466bad673498919c671">
+                    <span class="lbexSubTitleLevelOLC">Subtitle A — Nutrition</span>
+                </a>
+
+                <span class="lbexHang">
+                    <a href="#id12e60ee513f5480c95239787b4b60b0a" id="toc-id12e60ee513f5480c95239787b4b60b0a"></a>
+                    <span class="lbexHangWithMargin">
+                        <a id="id12e60ee513f5480c95239787b4b60b0a"> </a>
+                        <span class="lbexSectionlevelOLC">Sec. 10101. Re-evaluation of thrifty food plan.</span>
+                    </span>
+                </span>
+
+                <a id="id029e0e744d4c4fd4a7a2682123f462b7"> </a>
+                <span class="lbexIndent">
+                    (a)
+                    <span class="lbexSectionLevelOLCnuclear">In general</span>.—Section 3 of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2012">7 U.S.C. 2012</a>) is amended by striking subsection (u) and inserting the following:
+                        <span class="lbexIndent">
+                            <a id="idb3ac0f843aeb4653881dd469b92c40ce"> </a>
+                            <span class="lbexIndentSubsection">
+                                <span class="lbexIndentParagraph">
+                                “(u)
+                                <span class="lbexSectionLevelOLCnuclear">Thrifty food plan</span>.—
+                                <a id="idebe57dec6ba24f6fb7b8d592a6857b59"> </a>
+                                <span class="lbexIndentParagraph">“(1) IN GENERAL.—The term ‘thrifty food plan’ means the diet required to feed a family of 4 persons consisting of a man and a woman ages 20 through 50, a child ages 6 through 8, and a child ages 9 through 11 using the items and quantities of food described in the report of the Department of Agriculture entitled ‘Thrifty Food Plan, 2021’, and each successor report updated pursuant to this subsection, subject to the conditions that—
+                                    <a id="id070022ebdfa64437976d11f1d64b54a5"> </a>
+                                    <span class="lbexIndentSubpar">“(A) the relevant market baskets of the thrifty food plan shall only be changed pursuant to paragraph (4);</span>
+                                <a id="idde3d60e32512439c888c91a395405d61"> </a>
+                                <span class="lbexIndentSubpar">“(B) the cost of the thrifty food plan shall be the basis for uniform allotments for all households, regardless of the actual composition of the household; and</span>
+                                <a id="idf3d5e91f2bb74d528182dff78c9f4120"> </a>
+                                <span class="lbexIndentSubpar">“(C) the cost of the thrifty food plan may only be adjusted in accordance with this subsection.</span>
+                            </span>
+                            <a id="idbd41072aa1ba40cbb0d975a0fc108418"> </a>
+                            <span class="lbexIndentParagraph">“(2) HOUSEHOLD ADJUSTMENTS.—The Secretary shall make household adjustments using the following ratios of household size as a percentage of the maximum 4-person allotment:
+                                <a id="id0e488567d3664efabdc2ba13174d15a8"> </a>
+                                <span class="lbexIndentSubpar">“(A) For a 1-person household, 30 percent.</span>
+                                <a id="idf86c2d9fe9cc4fbcaa32fc82dc29742c"> </a>
+                                <span class="lbexIndentSubpar">“(B) For a 2-person household, 55 percent.</span>
+                                <a id="id234f2b37476048f7acd4dc76daed4b8d"> </a>
+                                <span class="lbexIndentSubpar">“(C) For a 3-person household, 79 percent.</span>
+                                <a id="id172c2a878d3a4b3b824f08a11dbf0271"> </a>
+                                <span class="lbexIndentSubpar">“(D) For a 4-person household, 100 percent.</span>
+                                <a id="idcbf15c966ebc43249f631c8ebeb314f6"> </a>
+                                <span class="lbexIndentSubpar">“(E) For a 5-person household, 119 percent.</span>
+                                <a id="idcc944e6b2fae433ab5a7e4b1f78bbdd3"> </a>
+                                <span class="lbexIndentSubpar">“(F) For a 6-person household, 143 percent.</span>
+                                <a id="ida78d6da32fb444958a26605f214988da"> </a>
+                                <span class="lbexIndentSubpar">“(G) For a 7-person household, 158 percent.</span>
+                            <a id="ida4e97b8e98cd4ff5a9a15a9d91bb9440"> </a>
+                            <span class="lbexIndentSubpar">“(H) For an 8-person household, 180 percent.</span>
+                            <a id="ide1224c1d0f71427ebe0df44d0d872f6a"> </a>
+                            <span class="lbexIndentSubpar">“(I) For a household of 9 persons or more, an additional 22 percent per person, which additional percentage shall not total more than 200 percent.</span>
+                        </span>
+                        <a id="idf33793ac882748d6988e948127079677"> </a>
+                        <span class="lbexIndentParagraph">“(3) ALLOWABLE COST ADJUSTMENTS.—The Secretary shall—
+                            <a id="id492f889d87604ac59cfcc12eb5a67002"> </a>
+                            <span class="lbexIndentSubpar">“(A) make cost adjustments in the thrifty food plan for Hawaii and the urban and rural parts of Alaska to reflect the cost of food in Hawaii and urban and rural Alaska;</span>
+                            <a id="idb3c1d253ee3a4d8e897ddcfaab9eace4"> </a>
+                            <span class="lbexIndentSubpar">“(B) make cost adjustments in the separate thrifty food plans for Guam and the Virgin Islands of the United States to reflect the cost of food in those States, but not to exceed the cost of food in the 50 States and the District of Columbia; and</span>
+                            <a id="id30fa37202a9f4308adb4f40b44c4aa35"> </a>
+                            <span class="lbexIndentSubpar">“(C) on October 1, 2025, and on each October 1 thereafter, adjust the cost of the thrifty food plan to reflect changes in the Consumer Price Index for All Urban Consumers, published by the Bureau of Labor Statistics of the Department of Labor, for the most recent 12-month period ending in June.</span>
+                        </span>
+                        <a id="idf991ca49f71743cabf76ba128529089d"> </a>
+                        <span class="lbexIndentParagraph">“(4) RE-EVALUATION OF MARKET BASKETS.—
+                            <a id="idf2a361ddcc4d43ea8accf358f9b66ffa"> </a>
+                            <span class="lbexIndentSubpar">“(A) RE-EVALUATION.—Not earlier than October 1, 2027, the Secretary may re-evaluate the market baskets of the thrifty food plan based on current food prices, food composition data, consumption patterns, and dietary guidance.</span>
+                            </span>
+                            <a id="idd1cfd59591f34eef819dd1f31dd8d823"> </a>
+                            <span class="lbexIndentSubpar">“(B) COST NEUTRALITY.—The Secretary shall not increase the cost of the thrifty food plan based on a re-evaluation under this paragraph.”.</span>
+                        </span>
+                    </span>
+                </span>
+            </span>
+
+            <a id="id6029077913944287b34f87183f3febbc"> </a>
+            <span class="lbexIndent">
+                (b) <span class="lbexSectionLevelOLCnuclear">Conforming amendments</span>.—
+                <a id="id4e00db971d56447b8b351c7173c816be"> </a>
+                <span class="lbexIndentParagraph">(1) Section 16(c)(1)(A)(ii)(II) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2025">7 U.S.C. 2025(c)(1)(A)(ii)(II)</a>) is amended by striking “section 3(u)(4)” and inserting “section 3(u)(3)”.</span>
+                <a id="id31b5d2a5aff4457ba50e10fa6d0508be"> </a>
+                <span class="lbexIndentParagraph">(2) Section 19(a)(2)(A)(ii) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2028">7 U.S.C. 2028(a)(2)(A)(ii)</a>) is amended by striking “section 3(u)(4)” and inserting “section 3(u)(3)”.</span>
+            <a id="idee2e2d037c834336bbcf57200b59b7f0"> </a>
+            <span class="lbexIndentParagraph">(3) Section 27(a)(2) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2036">7 U.S.C. 2036(a)(2)</a>)) is amended by striking “section 3(u)(4)” each place it appears and inserting “section 3(u)(3)”.</span>
+            </span>
+
+<span class="lbexHang">
+	<a href="#id3ad3484895a5415297d0457ba22bf62a" id="toc-id3ad3484895a5415297d0457ba22bf62a"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="id3ad3484895a5415297d0457ba22bf62a"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10102. Modifications to SNAP work requirements for able-bodied adults.</span>
+    </span>
+</span>
+
+<a id="id8e3f87b706a64a4b9bddecbc3bd60b88"> </a>
+<span class="lbexIndent">
+    (a) <span class="lbexSectionLevelOLCnuclear">Exceptions</span>.—Section 6(o) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2015">7 U.S.C. 2015(o)</a>) is amended by striking paragraph (3) and inserting the following:
+    <span class="lbexIndent annotated-text">
+        <a id="id48f61497b7fa4f649e84fe88f70e9f2e"> </a>
+        <span class="lbexIndentParagraph">“(3) EXCEPTIONS.—Paragraph (2) shall not apply to an individual if the individual is—
+            <a id="idfb31be165349448386894fff07d26b13"> </a>
+            <span class="lbexIndentSubpar">“(A) under 18, or over 65, years of age;</span>
+            <a id="idf5ff55e06c4a4ffea345c8992e645ce5"> </a>
+            <span class="lbexIndentSubpar">“(B) medically certified as physically or mentally unfit for employment;</span>
+            <a id="ide469867e7f854a1c9a33b094a4ffe0d0"> </a>
+            <span class="lbexIndentSubpar">“(C) a parent or other member of a household with responsibility for a dependent child under 14 years of age;</span>
+            <a id="id3505d32fee1d43168e78cf3dd700bd15"> </a>
+            <span class="lbexIndentSubpar">“(D) otherwise exempt under subsection (d)(2);</span>
+            <a id="idd8cf2dac862d4b6ba775b4bfe768213c"> </a>
+            <span class="lbexIndentSubpar">“(E) a pregnant woman;</span>
+            <a id="id0fde395ec654424ba8f42959d5ca8bcd"> </a>
+            <span class="lbexIndentSubpar">“(F) an Indian or an Urban Indian (as such terms are defined in paragraphs (13) and (28) of section 4 of the Indian Health Care Improvement Act); or</span>
+            <a id="idd34904b12bdb4cb4bbddba7f9632543d"> </a>
+            <span class="lbexIndentSubpar">“(G) a California Indian described in section 809(a) of the Indian Health Care Improvement Act.”.</span>
+        </span>
+    </span>
+    <a id="id9f1a3ec5a55d4ec99b1f4f73aeb00055"> </a>
+    <span class="lbexIndent">
+    (b) <span class="lbexSectionLevelOLCnuclear">Standardizing enforcement</span>.—Section 6(o)(4) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2015">7 U.S.C. 2015(o)(4)</a>) is amended—
+    <a id="idef8ea265e5124e1ba0b532e30ca90220"> </a>
+    <span class="lbexIndentParagraph">(1) in subparagraph (A), by striking clause (ii) and inserting the following:
+        <span class="lbexIndentSubsection">
+            <a id="id06cfe198af6b4e99a688e330db2d6520"> </a>
+            <span class="lbexIndentClause">“(ii) is in a noncontiguous State and has an unemployment rate that is at or above 1.5 times the national unemployment rate.”; and</span>
+        </span>
+    </span>
+    <a id="id46fcaaa69dbc4b0d8e2378dcdfab2578"> </a>
+    <span class="lbexIndentParagraph">(2) by adding at the end the following:<span class="lbexIndentSubsection">
+        <a id="idb2a63d417aa8475ca9bcf34eff307d2e"> </a>
+        <span class="lbexIndentSubpar">“(C) DEFINITION OF NONCONTIGUOUS STATE.—
+            <a id="id8af150aa76f4433b9687d4e38dcb586e"> </a>
+            <span class="lbexIndentClause">“(i) IN GENERAL.—In this paragraph, the term ‘noncontiguous State’ means a State that is not 1 of the contiguous 48 States or the District of Columbia.</span>
+            <a id="id79cf9bf9596c43fab6a39f48454220cd"> </a>
+            <span class="lbexIndentClause">“(ii) EXCLUSIONS.—The term ‘noncontiguous State’ does not include Guam or the Virgin Islands of the United States.”.</span>
+        </span>
+    </span>
+</span>
+<a id="id8823de7ab49945afb3390413bb3c5055"> </a>
+<span class="lbexIndent">
+    (c) <span class="lbexSectionLevelOLCnuclear">Waiver for noncontiguous states</span>.—Section 6(o) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2015">7 U.S.C. 2015(o)</a>) is amended—
+    <a id="idaba392452c9e4449a3b050005a574230"> </a>
+    <span class="lbexIndentParagraph">(1) by redesignating paragraph (7) as paragraph (8); and</span>
+    <a id="idb924985b54ac4ebdbd6b01616afaa156"> </a>
+    <span class="lbexIndentParagraph">(2) by inserting after paragraph (6) the following:
+        <span class="lbexIndentSubsection">
+        <a id="idc87e55d4193f47e78867416a95534da7"> </a>
+        <span class="lbexIndentParagraph">“(7) EXEMPTION FOR NONCONTIGUOUS STATES.—
+        <a id="id033d9c135b4e469f8042564eb428a0fc"> </a>
+        <span class="lbexIndentSubpar">“(A) DEFINITION OF NONCONTIGUOUS STATE.—
+        <a id="id7da5d4ec5d6742c5bcfcc08dc4984785"> </a>
+        <span class="lbexIndentClause">“(i) IN GENERAL.—In this paragraph, the term ‘noncontiguous State’ means a State that is not 1 of the contiguous 48 States or the District of Columbia.</span>
+    </span>
+    <a id="idd8e2ddb9e41c40adbff0bbdc63e22a83"> </a>
+    <span class="lbexIndentClause">“(ii) EXCLUSIONS.—In this paragraph, the term ‘noncontiguous State’ does not include Guam or the Virgin Islands of the United States.</span>
+</span>
+<a id="idaadfdf1caf6849d697832b69448e19e6"> </a>
+<span class="lbexIndentSubpar">“(B) EXEMPTION.—Subject to subparagraph (D), the Secretary may exempt individuals in a noncontiguous State from compliance with the requirements of paragraph (2) if—
+<a id="id165a35746db14921a2bbfee24169d159"> </a>
+<span class="lbexIndentClause">“(i) the State agency submits to the Secretary a request for that exemption, made in such form and at such time as the Secretary may require, and including the information described in subparagraph (C); and</span>
+</span>
+<a id="id6dfd88db9b7244a8987e18a68ed6dbe0"> </a>
+<span class="lbexIndentClause">“(ii) the Secretary determines that based on that request, the State agency is demonstrating a good faith effort to comply with the requirements of paragraph (2).</span>
+<a id="idb38d1c4502ae4653900583de2783d6c3"> </a>
+<span class="lbexIndentSubpar">“(C) GOOD FAITH EFFORT DETERMINATION.—In determining whether a State agency is demonstrating a good faith effort for purposes of subparagraph (B)(ii), the Secretary shall consider—
+<a id="id1b68a23c53a14c41a5023c65d1ba97f2"> </a>
+<span class="lbexIndentClause">“(i) any actions taken by the State agency toward compliance with the requirements of paragraph (2);</span>
+<a id="idda45b87ec339415489fff18a4ba9f307"> </a>
+<span class="lbexIndentClause">“(ii) any significant barriers to or challenges in meeting those requirements, including barriers or challenges relating to funding, design, development, procurement, or installation of necessary systems or resources;</span>
+<a id="id3e885e4919c4421ea39fb613e99ed878"> </a>
+<span class="lbexIndentClause">“(iii) the detailed plan and timeline of the State agency for achieving full compliance with those requirements, including any milestones (as defined by the Secretary); and</span>
+<a id="id317c31eb2a4d4a129160b90b6f80ecdb"> </a>
+<span class="lbexIndentClause">“(iv) any other criteria determined appropriate by the Secretary.</span>
+</span>
+<a id="id1fde6d35422b492aa207e8cf97acfc9a"> </a>
+<span class="lbexIndentSubpar">“(D) DURATION OF EXEMPTION.—
+<a id="id1187dd02316745bcbf27616c3fcfd011"> </a>
+<span class="lbexIndentClause">“(i) IN GENERAL.—An exemption granted under subparagraph (B) shall expire not later than December 31, 2028, and may not be renewed beyond that date.</span>
+<a id="id7de671de4edc4c1592cb0547343d7eeb"> </a>
+<span class="lbexIndentClause">“(ii) EARLY TERMINATION.—The Secretary may terminate an exemption granted under subparagraph (B) prior to the expiration date of that exemption if the Secretary determines that the State agency—
+<a id="id1a1537c25a50494caf9d681a9393e4b1"> </a><span class="lbexIndentSubclause">“(I) has failed to comply with the reporting requirements described in subparagraph (E); or</span>
+<a id="id6b06792b1a484cbeabb2479fdc0dd5c2"> </a><span class="lbexIndentSubclause">“(II) based on the information provided pursuant to subparagraph (E), failed to make continued good faith efforts toward compliance with the requirements of this subsection.</span>
+</span>
+</span>
+<a id="id1ad15566fb5f47118a4797ef9e186960"> </a>
+<span class="lbexIndentSubpar">“(E) REPORTING REQUIREMENTS.—A State agency granted an exemption under subparagraph (B) shall submit to the Secretary—
+<a id="id92b613f891b94ca9a94221c833c7f822"> </a>
+<span class="lbexIndentClause">“(i) quarterly progress reports on the status of the State agency in achieving the milestones toward full compliance described in subparagraph (C)(iii); and</span>
+<a id="id038a7d77fa1b4d1a9eb3ac446bfe9334"> </a>
+<span class="lbexIndentClause">“(ii) information on specific risks or newly identified barriers or challenges to full compliance, including the plan of the State agency to mitigate those risks, barriers, or challenges.”.</span>
+</span>
+</span>
+</span>
+
+<span class="lbexHang">
+	<a href="#id43a0ca68492a4fc3a1d6d146cb3c409f" id="toc-id43a0ca68492a4fc3a1d6d146cb3c409f"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="id43a0ca68492a4fc3a1d6d146cb3c409f"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10103. Availability of standard utility allowances based on receipt of energy assistance.</span>
+    </span>
+</span>
+
+<a id="idbeadda7eb8b14ca190cf615687fc85ae"> </a>
+<span class="lbexIndent">
+    (a)
+    <span class="lbexSectionLevelOLCnuclear">Standard utility allowance</span>.—Section 5(e)(6)(C)(iv)(I) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2014">7 U.S.C. 2014(e)(6)(C)(iv)(I)</a>) is amended by inserting “with an elderly or disabled member” after “households”.
+</span>
+
+<a id="id867c335e5bb34cfdb47f9485a4018f6e"> </a>
+<span class="lbexIndent">
+    (b) <span class="lbexSectionLevelOLCnuclear">Third-party energy assistance payments</span>.—Section 5(k)(4) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2014">7 U.S.C. 2014(k)(4)</a>) is amended—
+    <a id="id772f4c024ff64ce4a5c7d53f87404875"> </a>
+    <span class="lbexIndentParagraph">(1) in subparagraph (A), by inserting “without an elderly or disabled member” before “shall be”; and</span>
+</span>
+    <a id="id12ee28d40776419cba71ffe7c016cdfc"> </a>
+    <span class="lbexIndentParagraph">(2) in subparagraph (B), by inserting “with an elderly or disabled member” before “under a State law”.</span>
+
+<span class="lbexHang">
+	<a href="#id04a338a3c9104054aaf36a4f216f262e" id="toc-id04a338a3c9104054aaf36a4f216f262e"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="id04a338a3c9104054aaf36a4f216f262e"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10104. Restrictions on internet expenses.</span>
+    </span>
+</span>
+
+<span class="lbexIndent">
+    <span class="lbexIndentSectionText">Section 5(e)(6) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2014">7 U.S.C. 2014(e)(6)</a>) is amended by adding at the end the following:</span>
+</span>
+<a id="ideea9d4d5b8c74a2aaec7dc38c593aff0"> </a>
+<span class="lbexIndentSubpar annotated-text">“(E) RESTRICTIONS ON INTERNET EXPENSES.—Any service fee associated with internet connection shall not be used in computing the excess shelter expense deduction under this paragraph.”.</span>
+
+<span class="lbexHang">
+	<a href="#id88e200dd6fa94fbba1bccfdcd7b3f9c6" id="toc-id88e200dd6fa94fbba1bccfdcd7b3f9c6"> </a>
+    <span class="lbexHangWithMargin">
+    <a id="id88e200dd6fa94fbba1bccfdcd7b3f9c6"> </a>
+    <span class="lbexSectionlevelOLC">Sec. 10105. Matching funds requirements.</span>
+    </span>
+</span>
+
+<a id="id5c6c90b25e90426d9daaaeed432fa686"> </a>
+<span class="lbexIndent">
+    (a) <span class="lbexSectionLevelOLCnuclear">In general</span>.—Section 4(a) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2013">7 U.S.C. 2013(a)</a>) is amended—
+    <a id="idc6e6c2dcc4c247d0a81d2acfc4a8fa77"> </a>
+    <span class="lbexIndentParagraph">
+        <span class="lbexIndent">(1) by striking “(a) Subject to” and inserting the following:
+            <span class="lbexIndentSubsection">
+                <a id="id494d9d68e3b04ba7916a92666a5d41ee"> </a>
+                <span class="lbexIndentParagraph">
+                “(a) <span class="lbexSectionLevelOLCnuclear">Program</span>.—
+                <a id="id54df68af8cd449acbade683c964b8cbc"> </a>
+                    <span class="lbexIndentParagraph">“(1) ESTABLISHMENT.—Subject to”; and</span>
+                </span>
+            </span>
+        </span>
+    </span>
+</span>
+
+<a id="id19fd5b49244943e3ad7d3cac396db0d4"> </a>
+<span class="lbexIndentParagraph">(2) by adding at the end the following:
+    <span class="lbexIndentSubsection">
+    <a id="idcacd1c184f4744219e503e4e3b8d9b17"> </a>
+        <span class="lbexIndentParagraph">“(2) STATE QUALITY CONTROL INCENTIVE.—
+            <a id="idd0eb5796a73249808798bc1456db4134"> </a>
+            <span class="lbexIndentSubpar">“(A) DEFINITION OF PAYMENT ERROR RATE.—In this paragraph, the term ‘payment error rate’ has the meaning given the term in section 16(c)(2).</span>
+            <a id="idb680b8d937ee4692a77f181d7e998c3a"> </a>
+            <span class="lbexIndentSubpar">“(B) STATE COST SHARE.—
+                <a id="idf31e50cb67da4493882706c9050f2cae"> </a>
+                <span class="lbexIndentClause">“(i) IN GENERAL.—Subject to clause (iii), beginning in fiscal year 2028, if the payment error rate of a State as determined under clause (ii) is—
+                    <a id="idc00c5a5e735d411389c5288aab49c8d2"> </a><span class="lbexIndentSubclause">“(I) less than 6 percent, the Federal share of the cost of the allotment described in paragraph (1) for that State in a fiscal year shall be 100 percent, and the State share shall be 0 percent;</span>
+                    <a id="id3352718525f94e3aab59c526f583762b"> </a><span class="lbexIndentSubclause">“(II) equal to or greater than 6 percent but less than 8 percent, the Federal share of the cost of the allotment described in paragraph (1) for that State in a fiscal year shall be 95 percent, and the State share shall be 5 percent;</span>
+                    <a id="id59c71e7750e848859b1d21b89cfeaecb"> </a><span class="lbexIndentSubclause">“(III) equal to or greater than 8 percent but less than 10 percent, the Federal share of the cost of the allotment described in paragraph (1) for that State in a fiscal year shall be 90 percent, and the State share shall be 10 percent; and</span>
+                    <a id="id322e936e23044719bf29e1c48634c7bf"> </a><span class="lbexIndentSubclause">“(IV) equal to or greater than 10 percent, the Federal share of the cost of the allotment described in paragraph (1) for that State in a fiscal year shall be 85 percent, and the State share shall be 15 percent.</span>
+                </span>
+                <a id="idb8605bd8e10e47359e7d8f6cecdf54bb"> </a>
+                <span class="lbexIndentClause">“(ii) ELECTIONS.—
+                    <a id="idc7ff171d25a342e69d79342e39dffb89"> </a>
+                    <span class="lbexIndentSubclause">“(I) FISCAL YEAR 2028.—For fiscal year 2028, to calculate the applicable State share under clause (i), a State may elect to use the payment error rate of the State from fiscal year 2025 or 2026.</span>
+                    <a id="id3054714ec88040d68ba1a2b242c96470"> </a>
+                    <span class="lbexIndentSubclause">“(II) FISCAL YEAR 2029 AND THEREAFTER.—For fiscal year 2029 and each fiscal year thereafter, to calculate the applicable State share under clause (i), the Secretary shall use the payment error rate of the State for the third fiscal year preceding the fiscal year for which the State share is being calculated.</span>
+                </span>
+                <a id="id64060b7c96c346fc8afc30be39cb54f7"> </a>
+                <span class="lbexIndentClause">“(iii) DELAYED IMPLEMENTATION.—
+                    <a id="id8b52d479415f4f68a445f350476418e7"> </a><span class="lbexIndentSubclause">“(I) FISCAL YEAR 2025.—If, for fiscal year 2025, the payment error rate of a State multiplied by 1.5 is equal to or above 20 percent, the implementation date under clause (i) for that State shall be fiscal year 2029.</span>
+                    <a id="id3f0ee1417a9e4158894e390bb2853f24"> </a><span class="lbexIndentSubclause">“(II) FISCAL YEAR 2026.—If, for fiscal year 2026, the payment error rate of a State multiplied by 1.5 is equal to or above 20 percent, the implementation date under clause (i) for that State shall be fiscal year 2030.</span>
+                </span>
+            </span>
+        </span>
+        <a id="idc3f7f52e84fa47999b0a80dd3e68ab8a"> </a>
+        <span class="lbexIndentParagraph">“(3) MAXIMUM FEDERAL PAYMENT.—The Secretary may not pay towards the cost of an allotment described in paragraph (1) an amount that is greater than the applicable Federal share under paragraph (2).”.</span>
+    </span>
+</span>
+
+<a id="id731346fda0d3435496989a0aed4f1303"> </a>
+<span class="lbexIndent">
+(b) <span class="lbexSectionLevelOLCnuclear">Limitation on authority</span>.—Section 13(a)(1) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2022">7 U.S.C. 2022(a)(1)</a>) is amended in the first sentence by inserting “or the payment or disposition of a State share under section 4(a)(2)” after “16(c)(1)(D)(i)(II)”.</span>
+
+<span class="lbexHang">
+	<a href="#id99f94fac3f124dc59ec190ded5a8c989" id="toc-id99f94fac3f124dc59ec190ded5a8c989"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="id99f94fac3f124dc59ec190ded5a8c989"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10106. Administrative cost sharing.</span>
+    </span>
+</span>
+
+<span class="lbexIndent">
+    <span class="lbexIndentSectionText">Section 16(a) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2025">7 U.S.C. 2025(a)</a>) is amended in the matter preceding paragraph (1) by striking “agency an amount equal to 50 per centum” and inserting “agency, through fiscal year 2026, 50 percent, and for fiscal year 2027 and each fiscal year thereafter, 25 percent,”.</span>
+</span>
+
+<span class="lbexHang">
+	<a href="#id32d8c2b060954bc880c5641f1e3ebc98" id="toc-id32d8c2b060954bc880c5641f1e3ebc98"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="id32d8c2b060954bc880c5641f1e3ebc98"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10107. National education and obesity prevention grant program.</span>
+    </span>
+</span>
+<span class="lbexIndent">
+    <span class="lbexIndentSectionText">Section 28(d)(1)(F) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2036a">7 U.S.C. 2036a(d)(1)(F)</a>) is amended by striking “for fiscal year 2016 and each subsequent fiscal year” and inserting “for each of fiscal years 2016 through 2025”.</span>
+</span>
+
+
+<span class="lbexHang">
+	<a href="#ida84275cf43a848eba7f831b8ede59bb6" id="toc-ida84275cf43a848eba7f831b8ede59bb6"> </a>
+    <span class="lbexHangWithMargin">
+        <a id="ida84275cf43a848eba7f831b8ede59bb6"> </a>
+        <span class="lbexSectionlevelOLC">Sec. 10108. Alien SNAP eligibility.</span>
+    </span>
+</span>
+<span class="lbexIndent">
+    <span class="lbexIndentSectionText">Section 6(f) of the Food and Nutrition Act of 2008 (<a href="https://uscode.house.gov/quicksearch/get.plx?title=7&amp;section=2015">7 U.S.C. 2015(f)</a>) is amended to read as follows:</span>
+</span>
+
+<a id="id0cc67e99aa214a55adf1965fe982accb"> </a>
+<span class="lbexIndentSubsection">
+    <span class="lbexIndentParagraph">
+        “(f) No individual who is a member of a household otherwise eligible to participate in the supplemental nutrition assistance program under this section shall be eligible to participate in the supplemental nutrition assistance program as a member of that or any other household unless he or she is—
+        <a id="id9a9018d80d644e47939a0dd2301594e2"> </a>
+        <span class="lbexIndentParagraph">“(1) a resident of the United States; and</span>
+        <a id="idb645a1ddba944243a7258a8059cca78b"> </a>
+        <span class="lbexIndentParagraph">“(2) either—
+            <a id="id0917fc91ea19419cbd43126fa6776909"> </a>
+            <span class="lbexIndentSubpar">“(A) a citizen or national of the United States;</span>
+            <a id="id6be3ed82c09c4dee87d79e4ad2ad676f"> </a>
+            <span class="lbexIndentSubpar">“(B) an alien lawfully admitted for permanent residence as an immigrant as defined by sections 101(a)(15) and 101(a)(20) of the Immigration and Nationality Act, excluding, among others, alien visitors, tourists, diplomats, and students who enter the United States temporarily with no intention of abandoning their residence in a foreign country;</span>
+            <a id="idedfbacb891aa4d968126434249d55368"> </a>
+            <span class="lbexIndentSubpar">“(C) an alien who has been granted the status of Cuban and Haitian entrant, as defined in section 501(e) of the Refugee Education Assistance Act of 1980 (Public Law 96–422); or</span>
+            <a id="id59d511d2b4904ba99fd4fe6eb7dd0606"> </a>
+            <span class="lbexIndentSubpar">“(D) an individual who lawfully resides in the United States in accordance with a Compact of Free Association referred to in section 402(b)(2)(G) of the Personal Responsibility and Work Opportunity Reconciliation Act of 1996.</span>
+        </span>
+        <span class="lbexNonIndentParagraph">The income (less, at State option, a pro rata share) and financial resources of the individual rendered ineligible to participate in the supplemental nutrition assistance program under this subsection shall be considered in determining the eligibility and the value of the allotment of the household of which such individual is a member.”.</span>
+    </span>
+</span>
+</span>
+</span>
+</span>
+
 
                 <div>
                     <a href="#id22c6b45a6458467eadd2f1c0d1e80f8c" id="toc-id22c6b45a6458467eadd2f1c0d1e80f8c">
