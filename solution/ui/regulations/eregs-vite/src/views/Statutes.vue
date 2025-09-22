@@ -31,8 +31,7 @@ const username = inject("username");
   margin: 1em 0;
 }
 
-.lbexTocSubChapterOLC,
-.lbexTocSubTitleOLC {
+.lbexTocSubChapterOLC {
   font-size: 110%;
   font-weight: bold;
   display: block;
@@ -40,6 +39,7 @@ const username = inject("username");
 }
 
 .lbexTocDivisionOLC,
+.lbexTocSubTitleOLC,
 .lbexHang {
   font-size: 120%;
   font-weight: bold;
@@ -47,6 +47,7 @@ const username = inject("username");
   margin: 1em 0;
 }
 
+.lbexTitleLevelOLC,
 .lbexSubChapterLevelOLC,
 .lbexSubTitleLevelOLC,
 .lbexChapterLevelOLC {
@@ -110,12 +111,12 @@ const username = inject("username");
                 <h1>One Big Beautiful Bill Act (OBBBA)</h1>
 
                 <p>
-                    Excerpt from <a
+                    Excerpts from <a
                         href="https://www.congress.gov/bill/119th-congress/house-bill/1/text"
                         class="external"
                         target="_blank"
                         rel="noopener noreferrer"
-                    >H.R.1 — One Big Beautiful Bill Act</a> (Public Law No. 119-21, July 4, 2025), Title VII — Finance, Subtitle B — Health.
+                    >H.R.1 — One Big Beautiful Bill Act</a> (Public Law No. 119-21, July 4, 2025).
                 </p>
                 <p>
                     As an informal copy for ease of reading, additions to the Social Security Act are <span class="annotated-text">highlighted in gray</span>, and citations to statutes, regulations, and rules are linked. For authoritative reference or quoting, see the <a
@@ -126,9 +127,12 @@ const username = inject("username");
                     >OBBBA PDF from Congress.gov</a>.
                 </p>
 
-                <!--<div class="lbexTocSubTitleOLC">
-                    <a href="#toc-H00A124B5E74D481E9C40B11626C9DADE" id="H00A124B5E74D481E9C40B11626C9DADE">Subtitle B—Health</a>
-                </div>-->
+                <div class="lbexTocDivisionOLC">
+                    <a href="#toc-id22c6b45a6458467eadd2f1c0d1e80f8c" id="id22c6b45a6458467eadd2f1c0d1e80f8c">Title VII — Finance</a>
+                </div>
+                <div class="lbexTocSubTitleOLC">
+                    <a href="#toc-H00A124B5E74D481E9C40B11626C9DADE" id="H00A124B5E74D481E9C40B11626C9DADE">Subtitle B — Health</a>
+                </div>
                 <div class="lbexTocDivisionOLC">
                     <a id="H1F2AC7DAAC144B50AAB0E9E039D9BE3C" href="#toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C">Chapter 1 — Medicaid</a>
                 </div>
@@ -211,11 +215,16 @@ const username = inject("username");
                     <a id="H09652BCC85234E4FAAAC9D9A805494AF" href="#toc-H09652BCC85234E4FAAAC9D9A805494AF">Sec. 71121. Making certain adjustments to coverage of home or community-based services under Medicaid.</a>
                 </span>
 
-                <!--<div>
+                <div>
+                    <a href="#id22c6b45a6458467eadd2f1c0d1e80f8c" id="toc-id22c6b45a6458467eadd2f1c0d1e80f8c">
+                    <span class="lbexTitleLevelOLC">Title VII — Finance</span>
+                    </a>
+                </div>
+                <div>
                     <a href="#H00A124B5E74D481E9C40B11626C9DADE" id="toc-H00A124B5E74D481E9C40B11626C9DADE">
                     <span class="lbexSubTitleLevelOLC">Subtitle B — Health</span>
                     </a>
-                </div>-->
+                </div>
                 <div>
                     <a id="toc-H1F2AC7DAAC144B50AAB0E9E039D9BE3C" href="#H1F2AC7DAAC144B50AAB0E9E039D9BE3C">
                         <span class="lbexChapterLevelOLC">Chapter 1 — Medicaid</span>
