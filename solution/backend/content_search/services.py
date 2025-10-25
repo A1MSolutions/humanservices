@@ -43,12 +43,19 @@ class SummarizationService:
             prompt = f"You are a government policy expert speaking to a policy expert audience. Concisely summarize the following search results, in fewer than 100 words, in one paragraph with key details, focusing on information most relevant to all words in the query term: '{query}'. Don't say you are summarizing the search results. These are the search results: '{headline_text}'"
 
             response = self.client.invoke_model(
-                modelId='amazon.titan-text-premier-v1:0',
-                body=json.dumps({'inputText': prompt})
+                modelId='amazon.nova-pro-v1:0',
+                body=json.dumps({
+                    'messages': [
+                        {
+                            'role': 'user',
+                            'content': [{'text': prompt}]
+                        }
+                    ]
+                })
             )
 
             result = json.loads(response['body'].read())
-            summary = result['results'][0]['outputText']
+            summary = result['output']['message']['content'][0]['text']
 
             # Cut off any text after the last period to ensure ending on a complete sentence
             last_period = summary.rfind('.')
